@@ -1,0 +1,14 @@
+@import "../../styles/variables";
+
+.header {
+    background-color: $bg-color-dark;
+    padding: 0 7rem;
+}
+
+.navigation {
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 2rem;
+}
