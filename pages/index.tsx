@@ -1,6 +1,9 @@
 import Head from "next/head";
 import Hero from "../components/hero/Hero";
 import Navigation from "../components/navigation/Navigation";
+import Sidebar from "../components/sidebar/Sidebar";
+import SidebarLink from "../components/sidebar/SidebarLink";
+import GitHubLogo from "../components/svg/GithubLogo";
 import styles from "./index.module.scss";
 
 const Home = () => {
@@ -17,6 +20,18 @@ const Home = () => {
             </Head>
             <Navigation />
             <main className={styles.homepage}>
+                <Sidebar side="right">
+                    <SidebarLink href="mailto:rafalnawojczyk@gmail.com">
+                        <p className={styles["homepage__sidebar-email"]}>
+                            rafalnawojczyk@gmail.com
+                        </p>
+                    </SidebarLink>
+                </Sidebar>
+                <Sidebar side="left">
+                    <SidebarLink href="https://github.com/rafalnawojczyk">
+                        <GitHubLogo className={styles.homepage__logo} />
+                    </SidebarLink>
+                </Sidebar>
                 <Hero />
             </main>
         </>
