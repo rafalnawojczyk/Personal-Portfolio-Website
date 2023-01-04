@@ -1,9 +1,17 @@
 @import "./variables";
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap");
 
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+
+    &:focus {
+        outline: none;
+        outline: 2px solid $color-brand;
+        outline-offset: 4px;
+        border-radius: 5px;
+    }
 }
 
 html {
@@ -17,6 +25,7 @@ body {
 }
 
 body {
+    font-family: "Roboto Mono", sans-serif;
     background: $bg-color-dark;
 }
 
