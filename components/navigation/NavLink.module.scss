@@ -11,12 +11,11 @@
     align-items: center;
     gap: 0.8rem;
     cursor: pointer;
-    scale: 1;
-    transition: all 0.5s;
+
+    transition: $transition;
 
     &:hover {
         color: $color-brand;
-        scale: 1.03;
     }
 
     &__subtitle {
