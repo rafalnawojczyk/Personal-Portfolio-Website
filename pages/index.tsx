@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Hero from "../components/hero/Hero";
 import Navigation from "../components/navigation/Navigation";
 import styles from "./index.module.scss";
 
@@ -15,7 +16,9 @@ const Home = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Navigation />
-            <main className={styles.homepage}></main>
+            <main className={styles.homepage}>
+                <Hero />
+            </main>
         </>
     );
 };
