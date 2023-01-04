@@ -15,7 +15,7 @@ const Hero = () => {
             <p className={styles.hero__description}>
                 I build things for the web. Specialized in{" "}
                 <span className={styles.hero__accent}>React.js</span> and{" "}
-                <span className={styles.hero__accent}>Next.js. </span>Currently focused on looking
+                <span className={styles.hero__accent}>Next.js</span>. Currently focused on looking
                 for professional experience opportunities.
             </p>
 

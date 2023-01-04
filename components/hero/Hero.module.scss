@@ -1,8 +1,8 @@
 @import "../../styles/variables";
 
 .hero {
-    min-height: 100vh;
-    height: 100vh;
+    min-height: 90vh;
+    height: 90vh;
 
     display: flex;
     align-items: flex-start;
@@ -20,7 +20,7 @@
     &__subtitle {
         color: $color-font-grey;
         font-size: 6.4rem;
-        letter-spacing: -0.5px;
+        letter-spacing: -1px;
         font-weight: 700;
         margin-bottom: 1.5rem;
 
