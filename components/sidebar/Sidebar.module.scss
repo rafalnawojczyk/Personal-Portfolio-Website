@@ -1,0 +1,34 @@
+@import "../../styles/variables";
+
+.sidebar {
+    position: fixed;
+    bottom: 0;
+    width: 4rem;
+    z-index: 50;
+    height: 40vh;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &::after {
+        content: "";
+        background-color: $color-font-grey;
+        display: block;
+        width: 2px;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    &__left {
+        left: 4rem;
+        right: auto;
+    }
+
+    &__right {
+        right: 4rem;
+        left: auto;
+    }
+}
