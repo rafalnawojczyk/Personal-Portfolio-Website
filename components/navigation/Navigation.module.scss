@@ -9,6 +9,36 @@
     height: 10rem;
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
     gap: 2rem;
+
+    &__skip {
+        color: $bg-color-dark;
+        background-color: $color-brand;
+        border: 1px solid $color-brand;
+        border-radius: $border-radius;
+        font-size: 1.6rem;
+        line-height: 1;
+        text-decoration: none;
+        cursor: pointer;
+        transition: $transition;
+        padding: 1.5rem 2.5rem;
+        position: absolute;
+        top: auto;
+        left: -999px;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        z-index: -99;
+
+        &:focus,
+        &:active {
+            top: 0px;
+            left: 0px;
+            width: auto;
+            height: auto;
+            overflow: auto;
+            z-index: 99;
+        }
+    }
 }
