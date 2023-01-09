@@ -1,10 +1,11 @@
 import Head from "next/head";
-import Hero from "../components/hero/Hero";
+import Hero from "../components/sections/hero/Hero";
 import Navigation from "../components/navigation/Navigation";
 import Sidebar from "../components/sidebar/Sidebar";
 import SidebarLink from "../components/sidebar/SidebarLink";
 import GitHubLogo from "../components/svg/GithubLogo";
 import styles from "./index.module.scss";
+import About from "../components/sections/about/About";
 
 const Home = () => {
     return (
@@ -33,6 +34,7 @@ const Home = () => {
                     </SidebarLink>
                 </Sidebar>
                 <Hero />
+                <About />
             </main>
         </>
     );
