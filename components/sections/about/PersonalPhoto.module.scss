@@ -1,0 +1,47 @@
+@import "../../../styles/variables";
+
+.wrapper {
+    position: relative;
+    transition: $transition-long;
+
+    &::before {
+        content: "";
+        display: block;
+        z-index: -1;
+        background-color: transparent;
+        border: 2px solid $color-brand;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 3rem;
+        left: 3rem;
+        transition: $transition-long;
+    }
+
+    &:hover {
+        &::before {
+            top: 2rem;
+            left: 2rem;
+        }
+    }
+}
+
+.photo {
+    &__box {
+        display: grid;
+        grid-template-areas: "overlay";
+
+        & > * {
+            grid-area: overlay;
+        }
+    }
+
+    &__overlay {
+        background-color: rgba(100, 255, 219, 0.5);
+        transition: $transition-long;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+}
