@@ -5,7 +5,7 @@ import PersonalPhoto from "./PersonalPhoto";
 
 const About = () => {
     return (
-        <section className={styles.about} aria-labelledby="aboutme">
+        <section id="about" className={styles.about} aria-labelledby="aboutme">
             <div>
                 <HomepageTitle id="aboutme" title="About me" subtitle="00." />
                 <p className={styles.about__description}>
