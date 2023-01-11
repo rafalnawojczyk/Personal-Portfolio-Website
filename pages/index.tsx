@@ -6,6 +6,7 @@ import SidebarLink from "../components/sidebar/SidebarLink";
 import GitHubLogo from "../components/svg/GithubLogo";
 import styles from "./index.module.scss";
 import About from "../components/sections/about/About";
+import Projects from "../components/sections/projects/Projects";
 
 const Home = () => {
     return (
@@ -35,6 +36,7 @@ const Home = () => {
                 </Sidebar>
                 <Hero />
                 <About />
+                <Projects />
             </main>
         </>
     );
