@@ -25,23 +25,3 @@
         }
     }
 }
-
-.photo {
-    &__box {
-        display: grid;
-        grid-template-areas: "overlay";
-
-        & > * {
-            grid-area: overlay;
-        }
-    }
-
-    &__overlay {
-        background-color: rgba(100, 255, 219, 0.5);
-        transition: $transition-long;
-
-        &:hover {
-            background-color: transparent;
-        }
-    }
-}
