@@ -1,0 +1,23 @@
+@import "../styles/variables";
+
+.photo {
+    &__box {
+        display: grid;
+        grid-template-areas: "overlay";
+        border-radius: $border-radius;
+        overflow: hidden;
+
+        & > * {
+            grid-area: overlay;
+        }
+    }
+
+    &__overlay {
+        background-color: rgba(100, 255, 219, 0.2);
+        transition: $transition-long;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+}
