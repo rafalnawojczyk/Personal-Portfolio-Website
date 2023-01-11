@@ -4,11 +4,11 @@
     display: grid;
     grid-template-columns: 3fr 2fr;
     gap: 6rem;
+    margin-bottom: 9rem;
 
     &__description {
         font-size: 2rem;
         color: $color-font-grey-dark;
-        margin-top: 4rem;
     }
 
     &__photo-wrapper {
