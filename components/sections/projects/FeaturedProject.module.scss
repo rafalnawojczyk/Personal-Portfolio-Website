@@ -1,0 +1,103 @@
+@import "../../../styles/variables";
+
+.featured {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+
+    &__photo {
+        display: flex;
+        position: relative;
+        z-index: 1;
+        grid-column: 1 / 9;
+        grid-row: 1 / 2;
+    }
+
+    &__image {
+        border-radius: $border-radius;
+        overflow: hidden;
+    }
+
+    &__content {
+        grid-column: 7 / -1;
+        grid-row: 1 / 2;
+        position: relative;
+        z-index: 2;
+    }
+    &__text {
+        text-align: right;
+        font-weight: 400;
+        color: $color-brand;
+        font-size: 1.8rem;
+    }
+
+    &__heading {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__title {
+        color: $color-font-grey;
+        font-size: 3.2rem;
+        font-weight: 600;
+        transition: $transition;
+
+        &:hover,
+        &:active {
+            color: $color-brand;
+        }
+    }
+
+    &__description-box {
+        display: flex;
+        justify-content: start;
+        padding: 4rem;
+        border-radius: $border-radius;
+        box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+        background-color: $bg-color-lighter;
+        margin: 2rem 0;
+    }
+
+    &__description {
+        color: $color-font-grey-dark;
+        font-size: 1.6rem;
+        text-align: right;
+        line-height: 1.4;
+    }
+
+    &__list {
+        list-style: none;
+        color: $color-font-grey;
+        font-size: 1.6rem;
+        display: flex;
+        justify-content: space-around;
+        width: 80%;
+        margin-left: auto;
+    }
+
+    &__icons {
+        margin-top: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    &__link {
+        cursor: pointer;
+    }
+
+    &__icon {
+        width: 3rem;
+        height: 3rem;
+        transition: $transition;
+        color: $color-font-grey;
+
+        &:hover {
+            color: $color-brand;
+        }
+
+        &--first {
+            margin-left: auto;
+        }
+    }
+}
