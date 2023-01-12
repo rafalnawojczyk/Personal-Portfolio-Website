@@ -9,15 +9,13 @@ const About = () => {
             <div>
                 <HomepageTitle id="aboutme" title="About me" subtitle="00." />
                 <p className={styles.about__description}>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit esse tempora
-                    amet hic veniam odio modi magnam illum recusandae voluptas at quis est, cum,
-                    commodi assumenda laboriosam molestias! Nostrum, rem?
+                    Hello! My name is Rafal and I&apos;m from Poland. I really enjoy creating
+                    web-apps, learning new technologies.
                     <br />
                     <br />
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis temporibus
-                    nihil laboriosam dolores nobis sunt unde dolore repudiandae maxime, minima
-                    exercitationem, nulla eos voluptates perspiciatis eaque ad placeat dolor
-                    dignissimos.
+                    I&apos;m disciplined, amitious and creative junior developer with really various
+                    skills. I&apos;m specialized in React and Next.js, but I will be more than happy
+                    to learn new frameworks, such as Angular, Vue or Node.js.
                     <br />
                     <br />
                     Here are few technologies I&apos;ve been working with recently:
