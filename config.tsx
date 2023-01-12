@@ -1,6 +1,7 @@
 import FeaturedProjectModel from "./models/FeaturedProjectModel";
 import FeaturedImage from "./public/featured-project.jpg";
 import MinesweeperImage from "./public/minesweeper-project.jpg";
+import _2048Image from "./public/2048-project.jpg";
 
 export const twitchStatisticsData: FeaturedProjectModel = {
     githubLink: "https://github.com/rafalnawojczyk/Twitch-Statistics-Project",
@@ -23,4 +24,15 @@ export const minesweeperData: FeaturedProjectModel = {
     projectDescription: `Modern looking Minesweeper game made in Vanilla Javascript using classes, MVC architecture, SASS, private methods and properties. `,
     technologies: ["ES6+ Javascript", "SASS"],
     side: "left",
+};
+
+export const game2048Data: FeaturedProjectModel = {
+    githubLink: "https://github.com/rafalnawojczyk/2048",
+    previewLink: "https://rafalnawojczyk.pl/2048/",
+    altText: "Preview image showing 2048 game made by Rafal Nawojczyk",
+    imageSrc: _2048Image.src,
+    projectTitle: "2048 Game",
+    projectDescription: `2048 - great game made in Vanilla Javascript ES6+ and SASS preprocessor.`,
+    technologies: ["ES6+ Javascript", "SASS"],
+    side: "right",
 };
