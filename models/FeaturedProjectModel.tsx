@@ -6,5 +6,4 @@ export default interface FeaturedProjectModel {
     projectTitle: string;
     projectDescription: string;
     technologies: string[];
-    side: "left" | "right";
 }
