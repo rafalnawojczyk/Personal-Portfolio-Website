@@ -7,6 +7,7 @@ import GitHubLogo from "../components/svg/GithubLogo";
 import styles from "./index.module.scss";
 import About from "../components/sections/about/About";
 import Projects from "../components/sections/projects/Projects";
+import Contact from "../components/sections/contact/Contact";
 
 const Home = () => {
     return (
@@ -37,6 +38,7 @@ const Home = () => {
                 <Hero />
                 <About />
                 <Projects />
+                <Contact />
             </main>
         </>
     );
