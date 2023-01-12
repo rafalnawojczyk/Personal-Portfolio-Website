@@ -13,18 +13,19 @@ type FeaturedProjectProps = {
         projectTitle: string;
         projectDescription: string;
         technologies: string[];
-        side: "left" | "right";
     };
+    featured: boolean;
+    side: "left" | "right";
 };
 
 function classComposer(side: "left" | "right", className: string) {
     return `${styles[`featured__${className}`]} ${styles[`featured__${className}--${side}`]}`;
 }
 
-const FeaturedProject = ({ data }: FeaturedProjectProps) => {
+const FeaturedProject = ({ data, side, featured }: FeaturedProjectProps) => {
     return (
         <div className={styles.featured}>
-            <div className={classComposer(data.side, "photo")}>
+            <div className={classComposer(side, "photo")}>
                 <PhotoBox>
                     <Image
                         height={462}
@@ -37,9 +38,9 @@ const FeaturedProject = ({ data }: FeaturedProjectProps) => {
                 </PhotoBox>
             </div>
 
-            <div className={classComposer(data.side, "content")}>
-                <p className={classComposer(data.side, "text")}>Featured project</p>
-                <h3 className={classComposer(data.side, "heading")}>
+            <div className={classComposer(side, "content")}>
+                {featured && <p className={classComposer(side, "text")}>Featured project</p>}
+                <h3 className={classComposer(side, "heading")}>
                     <a
                         target="_blank"
                         rel="noreferrer"
@@ -50,21 +51,19 @@ const FeaturedProject = ({ data }: FeaturedProjectProps) => {
                     </a>
                 </h3>
                 <div className={styles["featured__description-box"]}>
-                    <p className={classComposer(data.side, "description")}>
-                        {data.projectDescription}
-                    </p>
+                    <p className={classComposer(side, "description")}>{data.projectDescription}</p>
                 </div>
-                <ul className={classComposer(data.side, "list")}>
+                <ul className={classComposer(side, "list")}>
                     {data.technologies.map((el, i) => {
                         return <li key={i}>{el}</li>;
                     })}
                 </ul>
-                <div className={classComposer(data.side, "icons")}>
+                <div className={classComposer(side, "icons")}>
                     <a
                         target="_blank"
                         rel="noreferrer"
                         href={data.githubLink}
-                        className={`${styles[`featured__icon--first-${data.side}`]} ${
+                        className={`${styles[`featured__icon--first-${side}`]} ${
                             styles.featured__link
                         }`}
                     >
