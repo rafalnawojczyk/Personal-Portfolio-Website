@@ -8,6 +8,7 @@ import styles from "./index.module.scss";
 import About from "../components/sections/about/About";
 import Projects from "../components/sections/projects/Projects";
 import Contact from "../components/sections/contact/Contact";
+import Footer from "../components/sections/footer/Footer";
 
 const Home = () => {
     return (
@@ -39,6 +40,7 @@ const Home = () => {
                 <About />
                 <Projects />
                 <Contact />
+                <Footer />
             </main>
         </>
     );
