@@ -4,13 +4,22 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     align-items: center;
+    margin-bottom: 12rem;
 
     &__photo {
         display: flex;
         position: relative;
         z-index: 1;
-        grid-column: 1 / 9;
-        grid-row: 1 / 2;
+
+        &--right {
+            grid-column: 1 / 9;
+            grid-row: 1 / 2;
+        }
+
+        &--left {
+            grid-column: 5 / 12;
+            grid-row: 1 / 2;
+        }
     }
 
     &__image {
@@ -19,21 +28,44 @@
     }
 
     &__content {
-        grid-column: 7 / -1;
-        grid-row: 1 / 2;
         position: relative;
         z-index: 2;
+
+        &--right {
+            grid-column: 7 / -1;
+            grid-row: 1 / 2;
+        }
+
+        &--left {
+            grid-column: 1 / 7;
+            grid-row: 1 / 2;
+        }
     }
+
     &__text {
-        text-align: right;
         font-weight: 400;
         color: $color-brand;
         font-size: 1.8rem;
+
+        &--right {
+            text-align: right;
+        }
+
+        &--left {
+            text-align: start;
+        }
     }
 
     &__heading {
         display: flex;
-        justify-content: flex-end;
+
+        &--right {
+            justify-content: flex-end;
+        }
+
+        &--left {
+            justify-content: flex-start;
+        }
     }
 
     &__title {
@@ -50,7 +82,7 @@
 
     &__description-box {
         display: flex;
-        justify-content: start;
+        justify-content: flex-start;
         padding: 4rem;
         border-radius: $border-radius;
         box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
@@ -61,8 +93,15 @@
     &__description {
         color: $color-font-grey-dark;
         font-size: 1.6rem;
-        text-align: right;
         line-height: 1.4;
+
+        &--right {
+            text-align: right;
+        }
+
+        &--left {
+            text-align: start;
+        }
     }
 
     &__list {
@@ -70,9 +109,16 @@
         color: $color-font-grey;
         font-size: 1.6rem;
         display: flex;
-        justify-content: space-between;
+        gap: 3rem;
         width: 80%;
-        margin-left: auto;
+
+        &--right {
+            margin-left: auto;
+        }
+
+        &--left {
+            margin-right: auto;
+        }
     }
 
     &__icons {
@@ -80,6 +126,13 @@
         display: flex;
         align-items: center;
         gap: 2rem;
+
+        &--left {
+            justify-content: flex-start;
+        }
+        &--right {
+            justify-content: flex-end;
+        }
     }
 
     &__link {
@@ -94,10 +147,6 @@
 
         &:hover {
             color: $color-brand;
-        }
-
-        &--first {
-            margin-left: auto;
         }
     }
 }
