@@ -2,6 +2,7 @@ import FeaturedProjectModel from "./models/FeaturedProjectModel";
 import FeaturedImage from "./public/featured-project.jpg";
 import MinesweeperImage from "./public/minesweeper-project.jpg";
 import _2048Image from "./public/2048-project.jpg";
+import creativetimImage from "./public/creativetim-project.jpg";
 
 export const twitchStatisticsData: FeaturedProjectModel = {
     githubLink: "https://github.com/rafalnawojczyk/Twitch-Statistics-Project",
@@ -13,7 +14,6 @@ export const twitchStatisticsData: FeaturedProjectModel = {
   App is fetching data from Twitch API, saves that into MongoDB using Next.js
   API routes, and renders all data in a modern looking charts and tables.`,
     technologies: ["Next.js", "React", "Typescript", "SASS", "Jest", "Firebase"],
-    side: "right",
 };
 export const minesweeperData: FeaturedProjectModel = {
     githubLink: "https://github.com/rafalnawojczyk/Minesweeper",
@@ -23,7 +23,6 @@ export const minesweeperData: FeaturedProjectModel = {
     projectTitle: "Minesweeper Game",
     projectDescription: `Modern looking Minesweeper game made in Vanilla Javascript using classes, MVC architecture, SASS, private methods and properties. `,
     technologies: ["ES6+ Javascript", "SASS"],
-    side: "left",
 };
 
 export const game2048Data: FeaturedProjectModel = {
@@ -34,5 +33,14 @@ export const game2048Data: FeaturedProjectModel = {
     projectTitle: "2048 Game",
     projectDescription: `2048 - great game made in Vanilla Javascript ES6+ and SASS preprocessor.`,
     technologies: ["ES6+ Javascript", "SASS"],
-    side: "right",
+};
+
+export const creativeTimData: FeaturedProjectModel = {
+    githubLink: "https://github.com/rafalnawojczyk/Copy-of-Creative-tim-webiste",
+    previewLink: "https://rafalnawojczyk.pl/creativetim/",
+    altText: "Preview image showing Creative Tim website built by Rafal Nawojczyk",
+    imageSrc: creativetimImage.src,
+    projectTitle: "Creative Tim website",
+    projectDescription: `Creative Tim - beautiful website created around an UX/UI book, that I tried to rewrite nearly pixel-perfect. There is some cool JS functionality added as well.`,
+    technologies: ["ES6+ Javascript", "SASS", "HTML"],
 };
