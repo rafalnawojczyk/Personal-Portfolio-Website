@@ -108,16 +108,19 @@
         list-style: none;
         color: $color-font-grey;
         font-size: 1.6rem;
+
         display: flex;
         gap: 3rem;
         width: 80%;
 
         &--right {
             margin-left: auto;
+            justify-content: flex-end;
         }
 
         &--left {
             margin-right: auto;
+            justify-content: flex-start;
         }
     }
 
