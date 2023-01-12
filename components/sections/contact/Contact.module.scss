@@ -18,6 +18,7 @@
     &__title {
         font-size: 5rem;
         margin-top: 1rem;
+        margin-bottom: 1rem;
         &:after {
             width: 0;
         }
@@ -26,6 +27,12 @@
     &__button {
         padding: 2rem 4rem;
         font-size: 1.6rem;
-        margin-bottom: 2rem;
+        margin-bottom: 8rem;
+    }
+
+    &__description {
+        margin-bottom: 6rem;
+        color: $color-font-grey-dark;
+        font-size: 1.6rem;
     }
 }

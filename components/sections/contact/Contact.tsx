@@ -17,7 +17,12 @@ const Contact = () => {
                     title="Get In Touch"
                     subtitle=""
                 />
+                <p className={styles.contact__description}>
+                    {" "}
+                    I&apos;m looking forward to hearing from you.
+                </p>
             </div>
+
             <Button
                 title="Say Hello"
                 href="mailto:rafalnawojczyk@gmail.com"
