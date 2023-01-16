@@ -1,6 +1,6 @@
 import HomepageTitle from "../../UI/HomepageTitle";
 import FeaturedProject from "./FeaturedProject";
-import styles from "./Projects.module.scss";
+
 import {
     twitchStatisticsData,
     minesweeperData,

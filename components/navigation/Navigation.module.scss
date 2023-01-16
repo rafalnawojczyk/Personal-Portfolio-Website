@@ -3,6 +3,14 @@
 .header {
     background-color: $bg-color-dark;
     padding: 0 7rem;
+
+    @media screen and (max-width: 56.25em) {
+        padding: 0 2rem;
+    }
+
+    @media screen and (max-width: 43.75em) {
+        padding: 0;
+    }
 }
 
 .navigation {
@@ -11,6 +19,10 @@
     align-items: center;
     justify-content: flex-end;
     gap: 2rem;
+
+    @media screen and (max-width: 43.75em) {
+        gap: 1.4rem;
+    }
 
     &__skip {
         color: $bg-color-dark;

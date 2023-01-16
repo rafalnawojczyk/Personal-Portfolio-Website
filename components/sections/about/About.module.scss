@@ -6,14 +6,47 @@
     gap: 6rem;
     margin-bottom: 9rem;
 
+    @media screen and (max-width: 43.75em) {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, auto);
+        margin-bottom: 6rem;
+        gap: 4rem;
+    }
+
     &__description {
         font-size: 2rem;
         color: $color-font-grey-dark;
     }
 
+    &__descbox {
+        grid-row: 2/3;
+        grid-column: 1 /2;
+        @media screen and (max-width: 43.75em) {
+            grid-row: 2 / 3;
+        }
+    }
+
+    &__title {
+        grid-row: 1 / 2;
+        @media screen and (max-width: 43.75em) {
+            margin-bottom: 2rem;
+        }
+    }
+
     &__photo-wrapper {
+        aspect-ratio: 1;
+
         display: flex;
         align-items: center;
         justify-content: center;
+
+        grid-row: 2 / 3;
+        grid-column: 2/ 3;
+        @media screen and (max-width: 43.75em) {
+            grid-column: 1/ 2;
+            grid-row: 3/4;
+            max-width: 60%;
+            justify-self: center;
+        }
     }
 }

@@ -6,8 +6,10 @@
         grid-template-areas: "overlay";
         border-radius: $border-radius;
         overflow: hidden;
+        position: relative;
 
         & > * {
+            display: flex;
             grid-area: overlay;
         }
     }

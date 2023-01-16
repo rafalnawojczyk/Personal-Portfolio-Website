@@ -4,6 +4,10 @@
     list-style: none;
     margin-top: 2rem;
     margin-bottom: 9rem;
+
+    @media screen and (max-width: 43.75em) {
+        margin-bottom: 3rem;
+    }
     & li {
         display: flex;
         align-items: center;

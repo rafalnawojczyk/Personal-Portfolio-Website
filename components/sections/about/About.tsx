@@ -6,8 +6,13 @@ import PersonalPhoto from "./PersonalPhoto";
 const About = () => {
     return (
         <section id="about" className={styles.about} aria-labelledby="aboutme">
-            <div>
-                <HomepageTitle id="aboutme" title="About me" subtitle="00." />
+            <HomepageTitle
+                className={styles.about__title}
+                id="aboutme"
+                title="About me"
+                subtitle="00."
+            />
+            <div className={styles.about__descbox}>
                 <p className={styles.about__description}>
                     Hello! My name is Rafal and I&apos;m from Poland. I really enjoy creating
                     web-apps, learning new technologies.
@@ -33,9 +38,8 @@ const About = () => {
                     ]}
                 />
             </div>
-            <div className={styles["about__photo-wrapper"]}>
-                <PersonalPhoto />
-            </div>
+
+            <PersonalPhoto className={styles["about__photo-wrapper"]} />
         </section>
     );
 };

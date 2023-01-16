@@ -17,6 +17,18 @@
 
 html {
     font-size: 62.5%;
+
+    @media screen and (max-width: 68.75em) {
+        font-size: 56%;
+    }
+
+    @media screen and (max-width: 56.25em) {
+        font-size: 50%;
+    }
+
+    @media screen and (max-width: 33.45em) {
+        font-size: 45%;
+    }
 }
 
 html,
@@ -28,6 +40,15 @@ body {
 body {
     font-family: "Roboto Mono", sans-serif;
     background: $bg-color-dark;
+    padding: 0 7rem;
+
+    @media screen and (max-width: 56.25em) {
+        padding: 0 5rem;
+    }
+
+    @media screen and (max-width: 33.45em) {
+        padding: 0 3rem;
+    }
 }
 
 a {

@@ -23,12 +23,20 @@
     }
 
     &__left {
-        left: 4rem;
+        left: 3rem;
         right: auto;
+
+        @media screen and (max-width: 56.25em) {
+            left: 0;
+        }
     }
 
     &__right {
-        right: 4rem;
+        right: 3rem;
         left: auto;
+
+        @media screen and (max-width: 56.25em) {
+            right: 0;
+        }
     }
 }
