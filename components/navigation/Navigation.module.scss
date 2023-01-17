@@ -59,13 +59,17 @@
     &__button {
         display: flex;
         align-items: center;
-        justify-content: flex-end;
+
         border: none;
-        color: transparent;
+        background-color: transparent;
         cursor: pointer;
         position: fixed;
         top: 3rem;
         right: 3rem;
+
+        height: 4rem;
+        width: 4rem;
+
         &:focus {
             outline: none !important;
         }
