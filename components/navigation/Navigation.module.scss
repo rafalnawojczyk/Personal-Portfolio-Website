@@ -1,8 +1,21 @@
 @import "../../styles/variables";
 
 .header {
-    background-color: $bg-color-dark;
+    background-color: rgba($bg-color-dark, 0.8);
+
     padding: 0 7rem;
+    transition: $transition;
+
+    @media screen and (min-width: 43.75em) {
+        position: sticky;
+        z-index: 100;
+        top: 0px;
+        height: 10rem;
+        backdrop-filter: blur(5px);
+        &__sticky {
+            top: -10rem;
+        }
+    }
 
     @media screen and (max-width: 56.25em) {
         padding: 0 2rem;
@@ -14,11 +27,11 @@
 }
 
 .navigation {
-    height: 10rem;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 2rem;
+    padding: 2rem;
 
     @media screen and (max-width: 43.75em) {
         display: none;
