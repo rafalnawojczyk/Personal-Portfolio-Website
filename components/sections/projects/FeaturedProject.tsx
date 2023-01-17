@@ -3,6 +3,7 @@ import PhotoBox from "../../PhotoBox";
 import GitHubLogo from "../../svg/GithubLogo";
 import PreviewIcon from "../../svg/PreviewIcon";
 import styles from "./FeaturedProject.module.scss";
+import twitchPhoto from "../../../public/featured-project.jpg";
 
 type FeaturedProjectProps = {
     data: {
@@ -28,11 +29,13 @@ const FeaturedProject = ({ data, side, featured }: FeaturedProjectProps) => {
             <div className={classComposer(side, "photo")}>
                 <PhotoBox>
                     <Image
-                        height={462}
-                        width={750}
                         className={styles.featured__image}
                         alt={data.altText}
+                        height={462}
+                        width={750}
                         src={data.imageSrc}
+                        // src={twitchPhoto}
+                        style={{ objectFit: "contain", maxWidth: "100%", height: "auto" }}
                         loading="lazy"
                     />
                 </PhotoBox>
