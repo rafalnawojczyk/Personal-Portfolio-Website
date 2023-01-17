@@ -56,9 +56,16 @@
 }
 
 .mobile-nav {
+    display: none;
+
+    @media screen and (max-width: 43.75em) {
+        display: flex;
+    }
+
     &__button {
         display: flex;
         align-items: center;
+        z-index: 9999;
 
         border: none;
         background-color: transparent;
@@ -116,6 +123,34 @@
                 width: 4rem;
                 transform: translateY(-1px) rotate(-135deg) translateX(1px);
             }
+        }
+    }
+
+    &__sidebar {
+        overflow-x: hidden;
+        width: min(75vw, 400px);
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        background-color: $bg-color-lighter;
+        box-shadow: -10px 0px 30px -15px rgba($bg-color-lighter, 0.7);
+        transition: $transition;
+        visibility: hidden;
+        transform: translateX(100vw);
+        backdrop-filter: blur(10px);
+
+        z-index: 1000;
+
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+
+        &-active {
+            visibility: visible;
+            transform: translateX(0vw);
         }
     }
 }
