@@ -5,11 +5,12 @@ type NavLinkProps = {
     title: string;
     subtitle: string;
     href: string;
+    onClick?: () => void;
 };
 
-const NavLink = ({ title, subtitle, href }: NavLinkProps) => {
+const NavLink = ({ title, subtitle, href, onClick }: NavLinkProps) => {
     return (
-        <Link href={href} className={styles["nav-link"]}>
+        <Link onClick={onClick} href={href} className={styles["nav-link"]}>
             <span className={styles["nav-link__subtitle"]}>{subtitle} </span> {" " + title}
         </Link>
     );
