@@ -9,8 +9,15 @@ import About from "../components/sections/about/About";
 import Projects from "../components/sections/projects/Projects";
 import Contact from "../components/sections/contact/Contact";
 import Footer from "../components/sections/footer/Footer";
+import { useState } from "react";
 
 const Home = () => {
+    const [blur, setBlur] = useState(false);
+
+    const blurToggler = (blur: boolean) => {
+        setBlur(blur);
+    };
+
     return (
         <>
             <Head>
@@ -22,8 +29,8 @@ const Home = () => {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Navigation />
-            <main className={styles.homepage}>
+            <Navigation blurToggler={blurToggler} />
+            <main className={`${styles.homepage} ${blur ? styles.blur : ""}`}>
                 <Sidebar side="right">
                     <SidebarLink href="mailto:rafalnawojczyk@gmail.com">
                         <p className={styles["homepage__sidebar-email"]}>

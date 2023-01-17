@@ -4,6 +4,7 @@
     max-width: $max-width;
     margin-left: auto;
     margin-right: auto;
+    transition: $transition;
 
     &__sidebar-email {
         writing-mode: vertical-lr;
@@ -21,4 +22,9 @@
             transform: translate(0, -15%);
         }
     }
+}
+
+.blur {
+    overflow: hidden;
+    filter: blur(3px);
 }
