@@ -1,6 +1,6 @@
 # Personal Portfolio website
 
-[LIVE VERSION HERE](rafalnawojczyk.pl)
+[LIVE VERSION HERE](https://rafalnawojczyk.pl/)
 
 ## Table of contents
 
