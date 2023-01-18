@@ -15,7 +15,7 @@ const Favicon = () => {
                 href="/public/favicon/favicon-16x16.png"
             />
             <link rel="manifest" href="/favicon/manifest.json" />
-            <link rel="mask-icon" href="/public/favicon/safari-pinned-tab.svg" color="#5bbad5" />
+            <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5" />
             <link rel="shortcut icon" href="/favicon/favicon.ico" />
             <meta name="msapplication-TileColor" content="#da532c" />
             <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
