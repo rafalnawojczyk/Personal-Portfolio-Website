@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>5 Dice game - Play with friends!</title>
+        <link rel="icon" type="image/x-icon" href="/img/favs.ico" />
+        <link href="style.css" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Crete+Round&display=swap" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="main-game">
+            <div class="players">
+                <!-- Player names labels -->
+                <div class="players-names">
+                    <div class="player-a container">
+                        <img src="img/player-a.png" class="player-a-img player-img" />
+                        <span class="name-a">Player 1</span>
+                    </div>
+                    <div class="player-b container">
+                        <img src="img/player-b.png" class="player-b-img player-img player-b" />
+                        <span class="name-b player-b">Player 2</span>
+                    </div>
+                    <div class="player-c container">
+                        <img src="img/player-c.png" class="player-c-img player-img player-c" />
+                        <span class="name-c player-c">Player 3</span>
+                    </div>
+                    <div class="player-d container">
+                        <img src="img/player-d.png" class="player-d-img player-img player-d" />
+                        <span class="name-d player-d">Player 4</span>
+                    </div>
+                </div>
+
+                <!-- score table -->
+                <div class="score-table">
+                    <!-- 1 row -->
+                    <div class="color-row empty-background"></div>
+                    <span class="color-row player-a first">A</span>
+                    <span class="color-row player-b first">B</span>
+                    <span class="color-row first player-c">C</span>
+                    <span class="color-row first player-d">D</span>
+
+                    <!-- 2 row -->
+
+                    <span class="score-label ones-label">Ones</span>
+                    <span class="player-a player-a-upper score player-a-ones"></span>
+                    <span class="player-b player-b-upper score player-b-ones"></span>
+                    <span class="player-c player-c-upper score player-c-ones"></span>
+                    <span class="player-d player-d-upper score player-d-ones"></span>
+
+                    <!-- 3 row -->
+
+                    <span class="score-label twos-label">Twos</span>
+                    <span class="player-a player-a-upper score player-a-twos"></span>
+                    <span class="player-b player-b-upper score player-b-twos"></span>
+                    <span class="player-c player-c-upper score player-c-twos"></span>
+                    <span class="player-d player-d-upper score player-d-twos"></span>
+
+                    <!-- 4 row -->
+
+                    <span class="score-label threes-label">Threes</span>
+                    <span class="player-a player-a-upper score player-a-threes"></span>
+                    <span class="player-b player-b-upper score player-b-threes"></span>
+                    <span class="player-c player-c-upper score player-c-threes"></span>
+                    <span class="player-d player-d-upper score player-d-threes"></span>
+
+                    <!-- 5 row -->
+
+                    <span class="score-label fours-label">Fours</span>
+                    <span class="player-a player-a-upper score player-a-fours"></span>
+                    <span class="player-b player-b-upper score player-b-fours"></span>
+                    <span class="player-c player-c-upper score player-c-fours"></span>
+                    <span class="player-d player-d-upper score player-d-fours"></span>
+
+                    <!-- 6 row -->
+
+                    <span class="score-label fives-label">Fives</span>
+                    <span class="player-a player-a-upper score player-a-fives"></span>
+                    <span class="player-b player-b-upper score player-b-fives"></span>
+                    <span class="player-c player-c-upper score player-c-fives"></span>
+                    <span class="player-d player-d-upper score player-d-fives"></span>
+
+                    <!-- 7 row -->
+
+                    <span class="score-label sixes-label">Sixes</span>
+                    <span class="player-a player-a-upper score player-a-sixes"></span>
+                    <span class="player-b player-b-upper score player-b-sixes"></span>
+                    <span class="player-c player-c-upper score player-c-sixes"></span>
+                    <span class="player-d player-d-upper score player-d-sixes"></span>
+
+                    <!-- 8 row -->
+                    <span class="score-label upper-sub-total-label">Sub-total:</span>
+                    <span class="player-a score player-a-upper-total total">0</span>
+                    <span class="player-b score player-b-upper-total total">0</span>
+                    <span class="player-c score player-c-upper-total total">0</span>
+                    <span class="player-d score player-d-upper-total total">0</span>
+
+                    <!-- 9 row -->
+                    <span class="score-label upper-bonus-label">Bonus<a class="additional-text bonuss">(min 63)</a>:</span>
+                    <span class="player-a score player-a-upper-bonus total">0</span>
+                    <span class="player-b score player-b-upper-bonus total">0</span>
+                    <span class="player-c score player-c-upper-bonus total">0</span>
+                    <span class="player-d score player-d-upper-bonus total">0</span>
+
+                    <!-- 10 row -->
+                    <span class="score-label top-total-label">Total <a class="additional-text totals">top half</a>:</span>
+                    <span class="player-a score player-a-top-total total">0</span>
+                    <span class="player-b score player-b-top-total total">0</span>
+                    <span class="player-c score player-c-top-total total">0</span>
+                    <span class="player-d score player-d-top-total total">0</span>
+
+                    <!-- 11 row -->
+
+                    <span class="score-label three-same-label">Three of a kind</span>
+                    <span class="player-a player-a-bottom score player-a-three-same"></span>
+                    <span class="player-b player-b-bottom score player-b-three-same"></span>
+                    <span class="player-c player-c-bottom score player-c-three-same"></span>
+                    <span class="player-d player-d-bottom score player-d-three-same"></span>
+
+                    <!-- 12 row -->
+
+                    <span class="score-label four-same-label">Four of a kind</span>
+                    <span class="player-a player-a-bottom score player-a-four-same"></span>
+                    <span class="player-b player-b-bottom score player-b-four-same"></span>
+                    <span class="player-c player-c-bottom score player-c-four-same"></span>
+                    <span class="player-d player-d-bottom score player-d-four-same"></span>
+
+                    <!-- 13 row -->
+
+                    <span class="score-label full-label">Full house</span>
+                    <span class="player-a player-a-bottom score player-a-full"></span>
+                    <span class="player-b player-b-bottom score player-b-full"></span>
+                    <span class="player-c player-c-bottom score player-c-full"></span>
+                    <span class="player-d player-d-bottom score player-d-full"></span>
+
+                    <!-- 14 row -->
+
+                    <span class="score-label small-straight-label">Small straight</span>
+                    <span class="player-a player-a-bottom score player-a-small-straight"></span>
+                    <span class="player-b player-b-bottom score player-b-small-straight"></span>
+                    <span class="player-c player-c-bottom score player-c-small-straight"></span>
+                    <span class="player-d player-d-bottom score player-d-small-straight"></span>
+
+                    <!-- 15 row -->
+
+                    <span class="score-label large-straight-label">Large straight </span>
+                    <span class="player-a player-a-bottom score player-a-large-straight"></span>
+                    <span class="player-b player-b-bottom score player-b-large-straight"></span>
+                    <span class="player-c player-c-bottom score player-c-large-straight"></span>
+                    <span class="player-d player-d-bottom score player-d-large-straight"></span>
+
+                    <!-- 16 row -->
+
+                    <span class="score-label five-same-label">Five of a kind</span>
+                    <span class="player-a player-a-bottom score player-a-five-same"></span>
+                    <span class="player-b player-b-bottom score player-b-five-same"></span>
+                    <span class="player-c player-c-bottom score player-c-five-same"></span>
+                    <span class="player-d player-d-bottom score player-d-five-same"></span>
+
+                    <!-- 17 row -->
+
+                    <span class="score-label chance-label">Chance</span>
+                    <span class="player-a player-a-bottom score player-a-chance"></span>
+                    <span class="player-b player-b-bottom score player-b-chance"></span>
+                    <span class="player-c player-c-bottom score player-c-chance"></span>
+                    <span class="player-d player-d-bottom score player-d-chance"></span>
+
+                    <!-- 18 row -->
+                    <span class="score-label bottom-total-label">Total <a class="additional-text btotal">bottom half</a>:</span>
+                    <span class="player-a score player-a-bottom-total total">0</span>
+                    <span class="player-b score player-b-bottom-total total">0</span>
+                    <span class="player-c score player-c-bottom-total total">0</span>
+                    <span class="player-d score player-d-bottom-total total">0</span>
+
+                    <!-- 919 row -->
+                    <span class="score-label grand-total-label">Grand total:</span>
+                    <span class="player-a score last player-a-grand-total total">0</span>
+                    <span class="player-b score last player-b-grand-total total">0</span>
+                    <span class="player-c score last player-c-grand-total total">0</span>
+                    <span class="player-d score last player-d-grand-total total">0</span>
+                </div>
+
+                <!-- cup images -->
+                <img class="click first-cup" src="img/cupnew.png" />
+                <img class="click second-cup" src="img/cupnew.png" />
+                <img class="click third-cup" src="img/cupnew.png" />
+
+                <!-- heart images -->
+                <img src="img/heart.png" class="move-img move-img-ones" />
+                <img src="img/heart.png" class="move-img move-img-twos" />
+                <img src="img/heart.png" class="move-img move-img-threes" />
+                <img src="img/heart.png" class="move-img move-img-fours" />
+                <img src="img/heart.png" class="move-img move-img-fives" />
+                <img src="img/heart.png" class="move-img move-img-sixes" />
+                <img src="img/heart.png" class="move-img move-img-three-kind" />
+                <img src="img/heart.png" class="move-img move-img-four-kind" />
+                <img src="img/heart.png" class="move-img move-img-full-house" />
+                <img src="img/heart.png" class="move-img move-img-small-straight" />
+                <img src="img/heart.png" class="move-img move-img-large-straight" />
+                <img src="img/heart.png" class="move-img move-img-five-kind" />
+                <img src="img/heart.png" class="move-img move-img-chance" />
+
+                <!-- shelf for dices -->
+                <div class="shelf-dice">
+                    <img src="img/dice-1.png" class="dice shelf first-dice hidden" />
+                    <img src="img/dice-1.png" class="dice shelf second-dice hidden" />
+                    <img src="img/dice-1.png" class="dice shelf third-dice hidden" />
+                    <img src="img/dice-1.png" class="dice shelf fourth-dice hidden" />
+                    <img src="img/dice-1.png" class="dice shelf fifth-dice hidden" />
+                </div>
+
+                <!-- table for dices -->
+                <div class="table-dice">
+                    <img src="img/dice-1.png" class="dice table first-dice hidden" />
+                    <img src="img/dice-1.png" class="dice table second-dice hidden" />
+                    <img src="img/dice-1.png" class="dice table third-dice hidden" />
+                    <img src="img/dice-1.png" class="dice table fourth-dice hidden" />
+                    <img src="img/dice-1.png" class="dice table fifth-dice hidden" />
+                </div>
+
+                <!-- TIMER DIV -->
+                <div class="timer-container">
+                    <p class="timer">01:00</p>
+                </div>
+            </div>
+        </div>
+        <!-- Winner announcement modal -->
+        <div class="winner">
+            <a class="winner-name">Player a WON!</a>
+            <a class="winner-points">With 0 points!</a>
+            <a class="gratz-label">Congratulations!</a>
+            <div class="button-container">
+                <button class="new-game-btn">Play once again!</button>
+                <img src="img/dice.png" class="modal-img first" />
+                <img src="img/dice.png" class="modal-img second" />
+            </div>
+        </div>
+
+        <!-- First modal on game start -->
+        <div class="modal first">
+            <span class="hello">HELLO!</span>
+            <a class="title-game">This is a 5-dice game.</a>
+            <a class="number-modal-players">Choose number of players:</a>
+
+            <div class="amount-players-btn">
+                <button class="number-btn">1</button>
+                <button class="number-btn">2</button>
+                <button class="number-btn">3</button>
+                <button class="number-btn">4</button>
+            </div>
+        </div>
+
+        <!-- Background dices on modals -->
+        <div class="background-dices-container">
+            <img src="img/dice.png" class="dice-background-img first" />
+            <img src="img/dice.png" class="dice-background-img second" />
+            <img src="img/dice.png" class="dice-background-img third" />
+            <img src="img/dice.png" class="dice-background-img fourth" />
+            <img src="img/dice.png" class="dice-background-img fifth" />
+        </div>
+
+        <!-- SECOND MODAL ON START -->
+        <div class="modal second">
+            <a class="nickname-choose">Please choose nicknames:</a>
+
+            <!-- div to disable autocomplete on chrome -->
+            <div style="display: none">
+                <input type="text" id="PreventChromeAutocomplete" name="name" />
+            </div>
+            <div class="player-inputs">
+                <div class="player1">
+                    <span class="player-input-1">Player 1</span>
+                    <input type="text" class="player-name-a" name="name" required minlength="3" maxlength="9" autocomplete="new-password" />
+                </div>
+                <div class="player2">
+                    <span class="player-input-2">Player 2</span>
+                    <input type="text" class="player-name-b" name="name" required minlength="3" maxlength="9" autocomplete="new-password" />
+                </div>
+                <div class="player3">
+                    <span class="player-input-3">Player 3</span>
+                    <input type="text" class="player-name-c" name="name" required minlength="3" maxlength="9" autocomplete="new-password" />
+                </div>
+                <div class="player4">
+                    <span class="player-input-4">Player 4</span>
+                    <input type="text" class="player-name-d" name="name" required minlength="3" maxlength="9" autocomplete="new-password" />
+                </div>
+            </div>
+
+            <button class="get-names-btn">PLAY!</button>
+        </div>
+
+        <!-- Bottom buttons for instruction and language change -->
+        <div class="bottom-btns">
+            <button class="instruction-btn bottom-btn">INSTRUCTION</button>
+            <button class="language-btn bottom-btn">POL / ENG</button>
+        </div>
+
+        <!-- ENGLISH INSTRUCTION -->
+        <div class="modal instruction EN hidden">
+            <h1>5-DICE INSTRUCTION</h1>
+            <h3>How it works?</h3>
+            <ul>
+                <li>Click the cup on the right</li>
+                <li>Look at your dices. If you want to keep one for later - click on it!</li>
+                <li>Remember that you can roll your dices 3 times. Dices on bottom shelf are not rolled.</li>
+                <li>Try to fulfill whole table with the biggest scores to win the game.</li>
+            </ul>
+            <h4>What are the possible moves?</h4>
+            <h5>Upper table:</h5>
+            <ul>
+                <li>Ones - score is a sum of all dices with number 1</li>
+                <li>Twos - score is a sum of all dices with number 2</li>
+                <li>Threes - score is a sum of all dices with number 3</li>
+                <li>Fours - score is a sum of all dices with number 4</li>
+                <li>Fives - score is a sum of all dices with number 5</li>
+                <li>Sixes - score is a sum of all dices with number 6</li>
+            </ul>
+            <a>Remember - if sum of points in upper table is at least 63, you will get a bonus 35 points!</a>
+
+            <h6>Bottom table:</h6>
+            <ul>
+                <li>Three of a kind - triple of dices must have the same number. Score is a sum of all dices.</li>
+                <li>Four of a kind - four of dices must have the same number. Score is a sum of all dices.</li>
+                <li>
+                    Full house - you need to have three dices of one number(triple), and two of other number(pair). This is worth 25 points.
+                </li>
+                <li>Small straight - you need to get four sequential dices(e.g. 2, 3, 4, 5). This is worth 30 points.</li>
+                <li>Large straight - you need to get five sequential dices(e.g. 1, 2, 3, 4, 5). This is worth 40 points.</li>
+                <li>Five of a kind - five of dices must have the same number. This one is worth 50 points.</li>
+                <li>Chance - if you have no other move - this one will give you a sum of all dices.</li>
+            </ul>
+        </div>
+
+        <!-- POLISH INSTRUCTION -->
+        <div class="modal instruction PL hidden">
+            <h1>5-DICE INSTRUKCJA</h1>
+            <h3>Jak grać w tę grę?</h3>
+            <ul>
+                <li>Naciśnij na kubek z kostkami po prawej stronie</li>
+                <li>Popatrz na swoje kostki. Jeżeli chcesz którąś zatrzymać na później - kliknij ją!</li>
+                <li>Pamiętaj, że możesz pomieszać kostki 3 razy. Kostki na dolnej półce nie mieszają się.</li>
+                <li>Staraj się uzupełnić całą tabelę jak najwyższymi wynikami. Powodzenia!</li>
+            </ul>
+            <h4>Jakie są możliwe kombinacje?</h4>
+            <h5>Górna tabela:</h5>
+            <ul>
+                <li>Jedynki - suma wszystkich kostek z jednym oczkiem</li>
+                <li>Dwójki - suma wszystkich kostek z dwoma oczkami</li>
+                <li>Trójki - suma wszystkich kostek z trzema oczkami</li>
+                <li>Czwórki - suma wszystkich kostek z czterema oczkami</li>
+                <li>Piątki - suma wszystkich kostek z pięcioma oczkami</li>
+                <li>Szóstki - suma wszystkich kostek z sześcioma oczkami</li>
+            </ul>
+            <a
+                >Pamiętaj, jeżeli suma Twoich punktów w górnej tabeli wynosi co najmniej 63 punkty - otrzymasz bonus w wysokości 35
+                punktów!</a
+            >
+
+            <h6>Dolna tabela:</h6>
+            <ul>
+                <li>Trzy jednakowe - Trzy kostki muszą mieć tę samą ilość oczek. Wynik to suma wszystkich kostek.</li>
+                <li>Cztery jednakowe - Cztery kostki muszą mieć tę samą ilość oczek. Wynik to suma wszystkich kostek.</li>
+                <li>
+                    Full - trzy kostki z jednakową liczbą oczek oraz dwie kostki z jednakową liczbą oczek(trójka + para). Kombinacja warta
+                    25 punktów.
+                </li>
+                <li>Mały strit - sekwencja składająca się z 4 kostek(np: 2, 3, 4, 5). Kombinacja warta 30 punktów.</li>
+                <li>Duży strit - sekwencja składająca się z 5 kostek(np: 1, 2, 3, 4, 5). Kombinacja warta 40 punktów.</li>
+                <li>Pięć jednakowych - Pięć kostek musi mieć tę samą ilość oczek. Ta kombinacja warta jest aż 50 punktów!</li>
+                <li>Szansa - jeśli nie masz innych ruchów - to idealny wybór. Wynik to suma wszystkich oczek.</li>
+            </ul>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

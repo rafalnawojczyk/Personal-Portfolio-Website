@@ -17,7 +17,7 @@ export const twitchStatisticsData: FeaturedProjectModel = {
 };
 export const minesweeperData: FeaturedProjectModel = {
     githubLink: "https://github.com/rafalnawojczyk/Minesweeper",
-    previewLink: "https://rafalnawojczyk.pl/minesweeper/",
+    previewLink: "https://rafalnawojczyk.pl/minesweeper/index.html",
     altText: "Preview image showing Minesweeper game made by Rafal Nawojczyk",
     imageSrc: MinesweeperImage.src,
     projectTitle: "Minesweeper Game",
@@ -27,7 +27,7 @@ export const minesweeperData: FeaturedProjectModel = {
 
 export const game2048Data: FeaturedProjectModel = {
     githubLink: "https://github.com/rafalnawojczyk/2048",
-    previewLink: "https://rafalnawojczyk.pl/2048/",
+    previewLink: "https://rafalnawojczyk.pl/2048/index.html",
     altText: "Preview image showing 2048 game made by Rafal Nawojczyk",
     imageSrc: _2048Image.src,
     projectTitle: "2048 Game",
@@ -37,7 +37,7 @@ export const game2048Data: FeaturedProjectModel = {
 
 export const creativeTimData: FeaturedProjectModel = {
     githubLink: "https://github.com/rafalnawojczyk/Copy-of-Creative-tim-webiste",
-    previewLink: "https://rafalnawojczyk.pl/creativetim/",
+    previewLink: "https://rafalnawojczyk.pl/creativetim/index.html",
     altText: "Preview image showing Creative Tim website built by Rafal Nawojczyk",
     imageSrc: creativetimImage.src,
     projectTitle: "Creative Tim website",
