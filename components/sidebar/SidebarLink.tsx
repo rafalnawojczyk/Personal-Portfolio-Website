@@ -7,7 +7,7 @@ type SidebarLinkProps = {
 
 const SidebarLink = ({ children, href }: SidebarLinkProps) => {
     return (
-        <a href={href} className={styles.sidebar__link}>
+        <a target="_blank" rel="noreferrer" href={href} className={styles.sidebar__link}>
             {children}
         </a>
     );
