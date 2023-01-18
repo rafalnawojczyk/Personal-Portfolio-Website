@@ -1,6 +1,8 @@
 {
+    "start_url": "/",
+    "scope": "/",
     "name": "Rafal Nawojczyk Portfolio website",
-    "short_name": "Portfolio",
+    "short_name": "Portfolio Page",
     "icons": [
         {
             "src": "/favicon/android-chrome-192x192.png",
