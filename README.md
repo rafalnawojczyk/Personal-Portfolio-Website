@@ -1,6 +1,6 @@
 # Personal Portfolio website
 
-[LIVE VERSION HERE](rafalnawojczyk.pl)
+[LIVE VERSION HERE](https://rafalnawojczyk.pl/)
 
 ## Table of contents
 
@@ -36,3 +36,6 @@ To run application run this command:
 ```
 npm run dev
 ```
+
+## Pagespeed
+![Personal portfolio website](https://github.com/rafalnawojczyk/Personal-Portfolio-Website/blob/main/public/pagespeed.png?raw=true)
