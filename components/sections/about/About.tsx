@@ -18,9 +18,9 @@ const About = () => {
                     web-apps, learning new technologies.
                     <br />
                     <br />
-                    I&apos;m disciplined, amitious and creative junior developer with really various
-                    skills. I&apos;m specialized in React and Next.js, but I will be more than happy
-                    to learn new frameworks, such as Angular, Vue or Node.js.
+                    I&apos;m disciplined, ambitious and creative junior developer with really
+                    various skills. I&apos;m specialized in React and Next.js, but I will be more
+                    than happy to learn new frameworks, such as Angular, Vue or Express.
                     <br />
                     <br />
                     Here are few technologies I&apos;ve been working with recently:
