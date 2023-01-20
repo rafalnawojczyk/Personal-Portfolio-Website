@@ -78,7 +78,11 @@ const Navigation = ({ blurToggler }: NavigationProps) => {
                                 enterDone: styles["mobile-nav__sidebar-active"],
                             }}
                         >
-                            <aside ref={asideRef} className={styles["mobile-nav__sidebar"]}>
+                            <aside
+                                aria-hidden={!mobileMenuOpen}
+                                ref={asideRef}
+                                className={styles["mobile-nav__sidebar"]}
+                            >
                                 <NavLink
                                     onClick={hideMobileMenu}
                                     href={"#about"}
