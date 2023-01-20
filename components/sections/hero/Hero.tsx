@@ -10,7 +10,7 @@ const Hero = () => {
 
             <h2 className={styles.hero__subtitle}>Rafał Nawojczyk.</h2>
             <h3 className={`${styles.hero__subtitle} ${styles["hero__subtitle--dark"]}`}>
-                I&apos;m Front-End Developer.
+                I&apos;m a Front-End Developer.
             </h3>
             <p className={styles.hero__description}>
                 I build things for the web. Specialized in{" "}
