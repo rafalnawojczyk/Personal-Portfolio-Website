@@ -20,6 +20,7 @@ const Hero = () => {
             </p>
 
             <Button
+                newTab={true}
                 className={styles.hero__button}
                 title="Check out my GitHub"
                 href="https://github.com/rafalnawojczyk"

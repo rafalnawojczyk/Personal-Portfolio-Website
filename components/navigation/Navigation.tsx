@@ -44,7 +44,7 @@ const Navigation = ({ blurToggler }: NavigationProps) => {
                         <NavLink href={"#about"} title="About" subtitle="00." />
                         <NavLink href={"#projects"} title="Projects" subtitle="01." />
                         <NavLink href={"#contact"} title="Contact" subtitle="02." />
-                        <Button title={"Resume"} href={"#resume"} />
+                        <Button title={"Resume"} href={"/resume.pdf"} newTab={true} />
                     </div>
 
                     <div className={styles["mobile-nav"]}>
