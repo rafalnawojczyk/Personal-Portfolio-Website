@@ -10,9 +10,7 @@ export const twitchStatisticsData: FeaturedProjectModel = {
     altText: "Preview image showing homepage of Twitch Statistics project website",
     imageSrc: FeaturedImage.src,
     projectTitle: "Twitch Statistics",
-    projectDescription: `Advanced full-stack web application, written in Typescript using Next.js.
-  App is fetching data from Twitch API, saves that into MongoDB using Next.js
-  API routes, and renders all data in a modern looking charts and tables.`,
+    projectDescription: `Advanced full-stack web application, written in Typescript using Next.js. The app fetches data from Twitch API, saves it into MongoDB using Next.js API routes, and renders all data in modern-looking charts and tables. `,
     technologies: ["Next.js", "React", "Typescript", "SASS", "Jest", "Firebase"],
 };
 export const minesweeperData: FeaturedProjectModel = {
@@ -21,7 +19,7 @@ export const minesweeperData: FeaturedProjectModel = {
     altText: "Preview image showing Minesweeper game made by Rafal Nawojczyk",
     imageSrc: MinesweeperImage.src,
     projectTitle: "Minesweeper Game",
-    projectDescription: `Modern looking Minesweeper game made in Vanilla Javascript using classes, MVC architecture, SASS, private methods and properties. `,
+    projectDescription: `A modern-looking Minesweeper game made in Vanilla Javascript using classes, MVC architecture, SASS, private methods and properties. `,
     technologies: ["ES6+ Javascript", "SASS"],
 };
 
@@ -41,6 +39,6 @@ export const creativeTimData: FeaturedProjectModel = {
     altText: "Preview image showing Creative Tim website built by Rafal Nawojczyk",
     imageSrc: creativetimImage.src,
     projectTitle: "Creative Tim website",
-    projectDescription: `Creative Tim - beautiful website created around an UX/UI book, that I tried to rewrite nearly pixel-perfect. There is some cool JS functionality added as well.`,
+    projectDescription: `Creative Tim - a beautiful website created around an UX/UI book that I tried to rewrite nearly pixel-perfect. There is some cool JS functionality added as well.`,
     technologies: ["ES6+ Javascript", "SASS", "HTML"],
 };
