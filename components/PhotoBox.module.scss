@@ -7,6 +7,7 @@
         border-radius: $border-radius;
         overflow: hidden;
         position: relative;
+        align-content: center;
 
         & > * {
             display: flex;
@@ -15,7 +16,7 @@
     }
 
     &__overlay {
-        background-color: rgba(100, 255, 219, 0.2);
+        background-color: lighten($color-green-tint, 20%);
         transition: $transition-long;
 
         &:hover {
