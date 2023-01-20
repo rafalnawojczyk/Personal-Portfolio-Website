@@ -12,7 +12,7 @@
 
 Beautiful website designed by Brittany Chiang, that I decided to grasp design from for my personal portfolio website. It's 
 
-![Personal portfolio website](https://github.com/rafalnawojczyk/Twitch-Statistics-Project/blob/master/public/twitch-statistics-screenshot.png?raw=true)
+![Personal portfolio website](https://github.com/rafalnawojczyk/rafalnawojczyk/blob/main/project-photo.jpg?raw=true)
 
 ## Technologies
 
