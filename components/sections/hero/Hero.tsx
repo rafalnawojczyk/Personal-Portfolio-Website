@@ -13,7 +13,7 @@ const Hero = () => {
                 I&apos;m a Front-End Developer.
             </h3>
             <p className={styles.hero__description}>
-                I build things for the web. Specialized in{" "}
+                I build things for the web. I specialize in{" "}
                 <span className={styles.hero__accent}>React.js</span> and{" "}
                 <span className={styles.hero__accent}>Next.js</span>. Currently focused on finding
                 opportunities to gain professional experience.
