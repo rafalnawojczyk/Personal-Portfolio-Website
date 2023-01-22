@@ -34,7 +34,7 @@ const FeaturedProject = ({ data, side, featured }: FeaturedProjectProps) => {
                         height={462}
                         width={750}
                         src={data.imageSrc}
-                        style={{ objectFit: "contain", maxWidth: "100%", height: "auto" }}
+                        style={{ objectFit: "contain", height: "auto" }}
                         loading="lazy"
                     />
                 </PhotoBox>
