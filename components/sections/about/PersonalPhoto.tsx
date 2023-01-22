@@ -21,6 +21,3 @@ const PersonalPhoto = ({ className }: PersonalPhotoProps) => {
 };
 
 export default PersonalPhoto;
-// <div className={styles.wrapper}>
-
-/* </div> */

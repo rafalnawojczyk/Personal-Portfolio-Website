@@ -1,12 +1,5 @@
 "use strict";
 
-// TODO: functions:
-// add second language set
-// read about music on JS/website and more
-// try to make animation of a cup shaking after clicking a cup. - good graphic and shaky animation will work out. Add delay while shaking on a dicePrint function
-// make better comments for code
-
-// All declarations for future purposes
 let tableDices = [];
 let shelfDices = [];
 let allDices = [];
@@ -18,7 +11,6 @@ let timer;
 let playersNumber;
 let language = 0;
 
-// Function for rolling a dices. Pushes exact amount of numbers to tableDices array
 const diceRoll = function (amount) {
     for (let i = 0; i < amount; i++) {
         tableDices.push(Math.trunc(Math.random() * 6 + 1));
@@ -26,12 +18,10 @@ const diceRoll = function (amount) {
     return tableDices;
 };
 
-// Function that is sorting array. It takes any array, and sort it out from min to max.
 const sortDices = function (array) {
     return array.sort((a, b) => a - b);
 };
 
-// Function to start new game after one ends. Added as a eventListener to a button on modal window in winner screen
 const newGame = function (e) {
     e.preventDefault();
     document.querySelector(".new-game-btn").removeEventListener("click", newGame);
@@ -39,7 +29,6 @@ const newGame = function (e) {
     document.querySelector(".winner").style.display = "none";
     document.querySelector(".winner").style.opacity = "0";
 
-    //reset to new game
     clearInterval(timer);
     timer = startTimer();
     unmmarkActualPlayer();
@@ -93,14 +82,18 @@ const checkPrintWinner = function () {
         document.querySelector(".winner-name").textContent =
             language === 0 ? `${winnerName} is a WINNER!` : `${winnerName} jest ZWYCIĘZCĄ!`;
         document.querySelector(".winner-points").textContent =
-            language === 0 ? `With ${playersArray[winner]} points!` : `Zdobył ${playersArray[winner]} punktów!`;
+            language === 0
+                ? `With ${playersArray[winner]} points!`
+                : `Zdobył ${playersArray[winner]} punktów!`;
     }
     if (playersNumber === 1) {
         let winnerName = document.querySelector(".name-a").textContent;
         document.querySelector(".winner-name").textContent =
             language === 0 ? `${winnerName}, is a WINNER!` : `${winnerName} jesteś ZWYCIĘZCĄ!`;
         document.querySelector(".winner-points").textContent =
-            language === 0 ? `With ${playersArray[winner]} points!` : `Zdobyłeś ${playersArray[winner]} punktów!`;
+            language === 0
+                ? `With ${playersArray[winner]} points!`
+                : `Zdobyłeś ${playersArray[winner]} punktów!`;
     }
     document.querySelector(".main-game").style.opacity = "0.3";
     document.querySelector(".winner").style.display = "grid";
@@ -376,7 +369,10 @@ const possibleMoves = function () {
     let ones = allDices.slice().filter(a => a == 1);
     ones.length; // amount of ones
     if (ones.length > 0 && document.querySelector(`${actualPlayer}-ones`).textContent == "") {
-        document.querySelector(`${actualPlayer}-ones`).innerHTML = printScore(ones.length, "possibleMove");
+        document.querySelector(`${actualPlayer}-ones`).innerHTML = printScore(
+            ones.length,
+            "possibleMove"
+        );
         document.querySelector(".move-img-ones").style.display = "block";
     }
 
@@ -384,7 +380,10 @@ const possibleMoves = function () {
     let twos = allDices.slice().filter(a => a == 2);
     twos.length; // amount of twos
     if (twos.length > 0 && document.querySelector(`${actualPlayer}-twos`).textContent == "") {
-        document.querySelector(`${actualPlayer}-twos`).innerHTML = printScore(twos.length * 2, "possibleMove");
+        document.querySelector(`${actualPlayer}-twos`).innerHTML = printScore(
+            twos.length * 2,
+            "possibleMove"
+        );
         document.querySelector(".move-img-twos").style.display = "block";
     }
 
@@ -392,7 +391,10 @@ const possibleMoves = function () {
     let threes = allDices.slice().filter(a => a == 3);
     threes.length; // amount of threes
     if (threes.length > 0 && document.querySelector(`${actualPlayer}-threes`).textContent == "") {
-        document.querySelector(`${actualPlayer}-threes`).innerHTML = printScore(threes.length * 3, "possibleMove");
+        document.querySelector(`${actualPlayer}-threes`).innerHTML = printScore(
+            threes.length * 3,
+            "possibleMove"
+        );
         document.querySelector(".move-img-threes").style.display = "block";
     }
 
@@ -400,7 +402,10 @@ const possibleMoves = function () {
     let fours = allDices.slice().filter(a => a == 4);
     fours.length; // amount of fours
     if (fours.length > 0 && document.querySelector(`${actualPlayer}-fours`).textContent == "") {
-        document.querySelector(`${actualPlayer}-fours`).innerHTML = printScore(fours.length * 4, "possibleMove");
+        document.querySelector(`${actualPlayer}-fours`).innerHTML = printScore(
+            fours.length * 4,
+            "possibleMove"
+        );
         document.querySelector(".move-img-fours").style.display = "block";
     }
 
@@ -408,7 +413,10 @@ const possibleMoves = function () {
     let fives = allDices.slice().filter(a => a == 5);
     fives.length; // amount of fives
     if (fives.length > 0 && document.querySelector(`${actualPlayer}-fives`).textContent == "") {
-        document.querySelector(`${actualPlayer}-fives`).innerHTML = printScore(fives.length * 5, "possibleMove");
+        document.querySelector(`${actualPlayer}-fives`).innerHTML = printScore(
+            fives.length * 5,
+            "possibleMove"
+        );
         document.querySelector(".move-img-fives").style.display = "block";
     }
 
@@ -416,13 +424,23 @@ const possibleMoves = function () {
     let sixes = allDices.slice().filter(a => a == 6);
     sixes.length; // amount of sixes
     if (sixes.length > 0 && document.querySelector(`${actualPlayer}-sixes`).textContent == "") {
-        document.querySelector(`${actualPlayer}-sixes`).innerHTML = printScore(sixes.length * 6, "possibleMove");
+        document.querySelector(`${actualPlayer}-sixes`).innerHTML = printScore(
+            sixes.length * 6,
+            "possibleMove"
+        );
         document.querySelector(".move-img-sixes").style.display = "block";
     }
 
     // check for triples
 
-    if (ones.length >= 3 || twos.length >= 3 || threes.length >= 3 || fours.length >= 3 || fives.length >= 3 || sixes.length >= 3) {
+    if (
+        ones.length >= 3 ||
+        twos.length >= 3 ||
+        threes.length >= 3 ||
+        fours.length >= 3 ||
+        fives.length >= 3 ||
+        sixes.length >= 3
+    ) {
         if (document.querySelector(`${actualPlayer}-three-same`).textContent == "") {
             document.querySelector(`${actualPlayer}-three-same`).innerHTML = printScore(
                 allDices.reduce((a, b) => a + b),
@@ -433,7 +451,14 @@ const possibleMoves = function () {
     }
     // check for quads
 
-    if (ones.length >= 4 || twos.length >= 4 || threes.length >= 4 || fours.length >= 4 || fives.length >= 4 || sixes.length >= 4) {
+    if (
+        ones.length >= 4 ||
+        twos.length >= 4 ||
+        threes.length >= 4 ||
+        fours.length >= 4 ||
+        fives.length >= 4 ||
+        sixes.length >= 4
+    ) {
         if (document.querySelector(`${actualPlayer}-four-same`).textContent == "") {
             document.querySelector(`${actualPlayer}-four-same`).innerHTML = printScore(
                 allDices.reduce((a, b) => a + b),
@@ -443,17 +468,37 @@ const possibleMoves = function () {
         }
     }
     // check for yahtzee
-    if (ones.length == 5 || twos.length == 5 || threes.length == 5 || fours.length == 5 || fives.length == 5 || sixes.length == 5) {
+    if (
+        ones.length == 5 ||
+        twos.length == 5 ||
+        threes.length == 5 ||
+        fours.length == 5 ||
+        fives.length == 5 ||
+        sixes.length == 5
+    ) {
         if (document.querySelector(`${actualPlayer}-five-same`).textContent == "") {
             document.querySelector(`${actualPlayer}-five-same`).innerHTML = "";
-            document.querySelector(`${actualPlayer}-five-same`).innerHTML = printScore(50, "possibleMove");
+            document.querySelector(`${actualPlayer}-five-same`).innerHTML = printScore(
+                50,
+                "possibleMove"
+            );
             document.querySelector(".move-img-five-kind").style.display = "block";
         }
     }
     // check for full house
     if (
-        (ones.length == 3 || twos.length == 3 || threes.length == 3 || fours.length == 3 || fives.length == 3 || sixes.length == 3) &&
-        (ones.length == 2 || twos.length == 2 || threes.length == 2 || fours.length == 2 || fives.length == 2 || sixes.length == 2) &&
+        (ones.length == 3 ||
+            twos.length == 3 ||
+            threes.length == 3 ||
+            fours.length == 3 ||
+            fives.length == 3 ||
+            sixes.length == 3) &&
+        (ones.length == 2 ||
+            twos.length == 2 ||
+            threes.length == 2 ||
+            fours.length == 2 ||
+            fives.length == 2 ||
+            sixes.length == 2) &&
         document.querySelector(`${actualPlayer}-full`).textContent == ""
     ) {
         // there is a full house - show value on scoreboard
@@ -468,7 +513,10 @@ const possibleMoves = function () {
         document.querySelector(`${actualPlayer}-small-straight`).textContent == ""
     ) {
         document.querySelector(`${actualPlayer}-small-straight`).innerHTML = "";
-        document.querySelector(`${actualPlayer}-small-straight`).innerHTML = printScore(30, "possibleMove");
+        document.querySelector(`${actualPlayer}-small-straight`).innerHTML = printScore(
+            30,
+            "possibleMove"
+        );
         document.querySelector(".move-img-small-straight").style.display = "block";
     }
 
@@ -478,7 +526,10 @@ const possibleMoves = function () {
         document.querySelector(`${actualPlayer}-large-straight`).textContent == ""
     ) {
         document.querySelector(`${actualPlayer}-large-straight`).innerHTML = "";
-        document.querySelector(`${actualPlayer}-large-straight`).innerHTML = printScore(40, "possibleMove");
+        document.querySelector(`${actualPlayer}-large-straight`).innerHTML = printScore(
+            40,
+            "possibleMove"
+        );
         document.querySelector(".move-img-large-straight").style.display = "block";
     }
 
@@ -486,7 +537,10 @@ const possibleMoves = function () {
     let chance = allDices.reduce((a, b) => a + b);
     if (document.querySelector(`${actualPlayer}-chance`).textContent == "") {
         document.querySelector(`${actualPlayer}-chance`).innerHTML = "";
-        document.querySelector(`${actualPlayer}-chance`).innerHTML = printScore(chance, "possibleMove");
+        document.querySelector(`${actualPlayer}-chance`).innerHTML = printScore(
+            chance,
+            "possibleMove"
+        );
         document.querySelector(".move-img-chance").style.display = "block";
     }
 
@@ -521,7 +575,9 @@ const startTimer = function () {
         labelTimer.textContent = `${min}:${sec}`;
 
         if (time <= 10) {
-            labelTimer.style.color === "red" ? (labelTimer.style.color = "white") : (labelTimer.style.color = "red");
+            labelTimer.style.color === "red"
+                ? (labelTimer.style.color = "white")
+                : (labelTimer.style.color = "red");
         }
 
         if (time === 0) {
@@ -594,10 +650,14 @@ const startGame = function () {
     // second modal asking for player names. If there are none - set default ones
     document.querySelector(".get-names-btn").addEventListener("click", function (e) {
         e.preventDefault();
-        document.querySelector(".name-a").textContent = document.querySelector(".player-name-a").value || "Player 1";
-        document.querySelector(".name-b").textContent = document.querySelector(".player-name-b").value || "Player 2";
-        document.querySelector(".name-c").textContent = document.querySelector(".player-name-c").value || "Player 3";
-        document.querySelector(".name-d").textContent = document.querySelector(".player-name-d").value || "Player 4";
+        document.querySelector(".name-a").textContent =
+            document.querySelector(".player-name-a").value || "Player 1";
+        document.querySelector(".name-b").textContent =
+            document.querySelector(".player-name-b").value || "Player 2";
+        document.querySelector(".name-c").textContent =
+            document.querySelector(".player-name-c").value || "Player 3";
+        document.querySelector(".name-d").textContent =
+            document.querySelector(".player-name-d").value || "Player 4";
 
         document.querySelector(".modal.second").style.opacity = "0";
         document.querySelector(".background-dices-container").style.opacity = "0";
@@ -635,7 +695,9 @@ const startGame = function () {
         }
 
         // adjust table for number of players
-        document.querySelector(".score-table").style.gridTemplateColumns = `repeat(${4 + playersNumber}, 1fr)`;
+        document.querySelector(".score-table").style.gridTemplateColumns = `repeat(${
+            4 + playersNumber
+        }, 1fr)`;
     });
 };
 
@@ -654,7 +716,8 @@ const changeLanguage = function (e) {
         document.querySelector(".instruction.PL").classList.remove("hidden");
     }
 
-    document.querySelector(".instruction-btn").textContent = language === 1 ? "INSTRUKCJA" : "INSTRUCTION";
+    document.querySelector(".instruction-btn").textContent =
+        language === 1 ? "INSTRUKCJA" : "INSTRUCTION";
     // Top table
     document.querySelector(".ones-label").textContent = language === 1 ? "Jedynki" : "Ones";
     document.querySelector(".twos-label").textContent = language === 1 ? "Dwójki" : "Twos";
@@ -663,39 +726,56 @@ const changeLanguage = function (e) {
     document.querySelector(".fives-label").textContent = language === 1 ? "Piątki" : "Fives";
     document.querySelector(".sixes-label").textContent = language === 1 ? "Szóstki" : "Sixes";
 
-    document.querySelector(".upper-sub-total-label").textContent = language === 1 ? "Podsuma:" : "Sub-total";
+    document.querySelector(".upper-sub-total-label").textContent =
+        language === 1 ? "Podsuma:" : "Sub-total";
     document.querySelector(".upper-bonus-label").textContent = "Bonus";
-    document.querySelector(".upper-bonus-label").innerHTML += "<a class='additional-text bonuss'>(min 63):</a>";
+    document.querySelector(".upper-bonus-label").innerHTML +=
+        "<a class='additional-text bonuss'>(min 63):</a>";
     document.querySelector(".top-total-label").textContent = language === 1 ? "Suma" : "Total";
     document.querySelector(".top-total-label").innerHTML +=
-        language === 1 ? '<a class="additional-text totals">górna tabela:</a>' : '<a class="additional-text totals">top half:</a>';
+        language === 1
+            ? '<a class="additional-text totals">górna tabela:</a>'
+            : '<a class="additional-text totals">top half:</a>';
 
     // Bottom table
-    document.querySelector(".three-same-label").textContent = language === 1 ? "Trzy jednakowe" : "Three of a kind";
-    document.querySelector(".four-same-label").textContent = language === 1 ? "Cztery jednakowe" : "Four of a kind";
+    document.querySelector(".three-same-label").textContent =
+        language === 1 ? "Trzy jednakowe" : "Three of a kind";
+    document.querySelector(".four-same-label").textContent =
+        language === 1 ? "Cztery jednakowe" : "Four of a kind";
     document.querySelector(".full-label").textContent = language === 1 ? "Full" : "Full house";
-    document.querySelector(".small-straight-label").textContent = language === 1 ? "Mały strit" : "Small straight";
-    document.querySelector(".large-straight-label").textContent = language === 1 ? "Duży strit" : "Large straight";
-    document.querySelector(".five-same-label").textContent = language === 1 ? "Pięć jednakowych" : "Five of a kind";
+    document.querySelector(".small-straight-label").textContent =
+        language === 1 ? "Mały strit" : "Small straight";
+    document.querySelector(".large-straight-label").textContent =
+        language === 1 ? "Duży strit" : "Large straight";
+    document.querySelector(".five-same-label").textContent =
+        language === 1 ? "Pięć jednakowych" : "Five of a kind";
     document.querySelector(".chance-label").textContent = language === 1 ? "Szansa" : "Chance";
 
     document.querySelector(".bottom-total-label").textContent = language === 1 ? "Suma" : "Total";
     document.querySelector(".bottom-total-label").innerHTML +=
-        language === 1 ? '<a class="additional-text totals">dolna tabela:</a>' : '<a class="additional-text totals">bottom half:</a>';
-    document.querySelector(".grand-total-label").textContent = language === 1 ? "Suma całkowita:" : "Grand total:";
+        language === 1
+            ? '<a class="additional-text totals">dolna tabela:</a>'
+            : '<a class="additional-text totals">bottom half:</a>';
+    document.querySelector(".grand-total-label").textContent =
+        language === 1 ? "Suma całkowita:" : "Grand total:";
 
     // winner modal
 
-    document.querySelector(".gratz-label").textContent = language === 1 ? "Gratulacje!" : "Congratulations!";
-    document.querySelector(".new-game-btn").textContent = language === 1 ? "Zagraj jeszcze raz!" : "Play once again!";
+    document.querySelector(".gratz-label").textContent =
+        language === 1 ? "Gratulacje!" : "Congratulations!";
+    document.querySelector(".new-game-btn").textContent =
+        language === 1 ? "Zagraj jeszcze raz!" : "Play once again!";
 
     // modal first
     document.querySelector(".hello").textContent = language === 1 ? "CZEŚĆ!" : "HELLO!";
-    document.querySelector(".title-game").textContent = language === 1 ? "Zagraj w 5 Dice!" : "This is a 5-dice game.";
-    document.querySelector(".number-modal-players").textContent = language === 1 ? "Wybierz ilość graczy:" : "Choose number of players:";
+    document.querySelector(".title-game").textContent =
+        language === 1 ? "Zagraj w 5 Dice!" : "This is a 5-dice game.";
+    document.querySelector(".number-modal-players").textContent =
+        language === 1 ? "Wybierz ilość graczy:" : "Choose number of players:";
 
     // second modal
-    document.querySelector(".nickname-choose").textContent = language === 1 ? "Wpisz nazwę gracza:" : "Please choose nicknames:";
+    document.querySelector(".nickname-choose").textContent =
+        language === 1 ? "Wpisz nazwę gracza:" : "Please choose nicknames:";
     document.querySelector(".player-input-1").textContent = language === 1 ? "Gracz 1" : "Player 1";
     document.querySelector(".player-input-2").textContent = language === 1 ? "Gracz 2" : "Player 2";
     document.querySelector(".player-input-3").textContent = language === 1 ? "Gracz 3" : "Player 3";
@@ -703,16 +783,28 @@ const changeLanguage = function (e) {
     document.querySelector(".get-names-btn").textContent = language === 1 ? "GRAJ!" : "PLAY!";
 
     // change nicknames if they are default
-    if (document.querySelector(".name-a").textContent == "Player 1" || document.querySelector(".name-a").textContent == "Gracz 1") {
+    if (
+        document.querySelector(".name-a").textContent == "Player 1" ||
+        document.querySelector(".name-a").textContent == "Gracz 1"
+    ) {
         document.querySelector(".name-a").textContent = language === 1 ? "Gracz 1" : "Player 1";
     }
-    if (document.querySelector(".name-b").textContent == "Player 2" || document.querySelector(".name-b").textContent == "Gracz 2") {
+    if (
+        document.querySelector(".name-b").textContent == "Player 2" ||
+        document.querySelector(".name-b").textContent == "Gracz 2"
+    ) {
         document.querySelector(".name-b").textContent = language === 1 ? "Gracz 2" : "Player 2";
     }
-    if (document.querySelector(".name-c").textContent == "Player 3" || document.querySelector(".name-c").textContent == "Gracz 3") {
+    if (
+        document.querySelector(".name-c").textContent == "Player 3" ||
+        document.querySelector(".name-c").textContent == "Gracz 3"
+    ) {
         document.querySelector(".name-c").textContent = language === 1 ? "Gracz 3" : "Player 3";
     }
-    if (document.querySelector(".name-d").textContent == "Player 4" || document.querySelector(".name-d").textContent == "Gracz 4") {
+    if (
+        document.querySelector(".name-d").textContent == "Player 4" ||
+        document.querySelector(".name-d").textContent == "Gracz 4"
+    ) {
         document.querySelector(".name-d").textContent = language === 1 ? "Gracz 4" : "Player 4";
     }
 };

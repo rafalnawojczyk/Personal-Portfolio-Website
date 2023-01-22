@@ -10,7 +10,6 @@ type NavigationProps = {
 };
 
 const Navigation = ({ blurToggler }: NavigationProps) => {
-    //TODO: Add resume as onClick download
     const buttonRef = useRef(null);
     const asideRef = useRef(null);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -24,7 +23,6 @@ const Navigation = ({ blurToggler }: NavigationProps) => {
     };
 
     const hideMobileMenu = () => {
-        // if (!mobileMenuOpen) return;
         setMobileMenuOpen(false);
         blurToggler(false);
     };

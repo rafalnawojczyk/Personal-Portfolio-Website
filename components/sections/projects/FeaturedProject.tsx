@@ -34,7 +34,6 @@ const FeaturedProject = ({ data, side, featured }: FeaturedProjectProps) => {
                         height={462}
                         width={750}
                         src={data.imageSrc}
-                        // src={twitchPhoto}
                         style={{ objectFit: "contain", maxWidth: "100%", height: "auto" }}
                         loading="lazy"
                     />
