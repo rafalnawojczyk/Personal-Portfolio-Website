@@ -10,6 +10,11 @@
     margin-top: 9rem;
     margin-bottom: 6rem;
 
+    @media screen and (max-width: 33.45em) {
+        font-size: 2.8rem;
+        white-space: normal;
+    }
+
     &__number {
         color: $color-brand;
         margin-right: 1.4rem;
