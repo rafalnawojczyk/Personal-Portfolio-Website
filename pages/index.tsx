@@ -32,14 +32,14 @@ const Home = () => {
             <Navigation blurToggler={blurToggler} />
             <main className={`${styles.homepage} ${blur ? styles.blur : ""}`}>
                 <Sidebar side="right">
-                    <SidebarLink href="mailto:rafalnawojczyk@gmail.com">
+                    <SidebarLink ariaLabel="Mailto rafalnawojczyk@gmail.ocm" href="mailto:rafalnawojczyk@gmail.com">
                         <p className={styles["homepage__sidebar-email"]}>
                             rafalnawojczyk@gmail.com
                         </p>
                     </SidebarLink>
                 </Sidebar>
                 <Sidebar side="left">
-                    <SidebarLink href="https://github.com/rafalnawojczyk">
+                    <SidebarLink ariaLabel="Github link to rafalnawojczyk account - opens in new tab" href="https://github.com/rafalnawojczyk">
                         <GitHubLogo className={styles.homepage__logo} />
                     </SidebarLink>
                 </Sidebar>

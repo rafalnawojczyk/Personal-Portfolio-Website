@@ -1,5 +1,5 @@
-import Button from "../../UI/Button";
-import styles from "./Hero.module.scss";
+import Button from '../../UI/Button';
+import styles from './Hero.module.scss';
 
 const Hero = () => {
     return (
@@ -9,14 +9,14 @@ const Hero = () => {
             </h1>
 
             <h2 className={styles.hero__subtitle}>Rafał Nawojczyk.</h2>
-            <h3 className={`${styles.hero__subtitle} ${styles["hero__subtitle--dark"]}`}>
+            <h3 className={`${styles.hero__subtitle} ${styles['hero__subtitle--dark']}`}>
                 I&apos;m a Front-End Developer.
             </h3>
             <p className={styles.hero__description}>
-                I build things for the web. I specialize in{" "}
-                <span className={styles.hero__accent}>React.js</span> and{" "}
-                <span className={styles.hero__accent}>Next.js</span>. Currently focused on finding
-                opportunities to gain professional experience.
+                I build things for the web. I specialize in <span className={styles.hero__accent}>React.js</span>,{' '}
+                <span className={styles.hero__accent}>Next.js</span> and{' '}
+                <span className={styles.hero__accent}>React Native</span>. Currently looking to broaden my skills and
+                experience.
             </p>
 
             <Button
