@@ -1,6 +1,5 @@
 import NavLink from "./NavLink";
 import styles from "./Navigation.module.scss";
-import Button from "../UI/Button";
 import { useRef, useState } from "react";
 import { CSSTransition } from "react-transition-group";
 import { useScrollDirection } from "../../hooks/useScrollDirection";
@@ -42,7 +41,6 @@ const Navigation = ({ blurToggler }: NavigationProps) => {
                         <NavLink href={"#about"} title="About" subtitle="00." />
                         <NavLink href={"#projects"} title="Projects" subtitle="01." />
                         <NavLink href={"#contact"} title="Contact" subtitle="02." />
-                        <Button title={"Resume"} href={"/resume.pdf"} newTab={true} />
                     </div>
 
                     <div className={styles["mobile-nav"]}>
@@ -99,7 +97,6 @@ const Navigation = ({ blurToggler }: NavigationProps) => {
                                     title="Contact"
                                     subtitle="02."
                                 />
-                                <Button title={"Resume"} href={"#resume"} />
                             </aside>
                         </CSSTransition>
                     </div>
