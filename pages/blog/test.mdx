@@ -1,0 +1,47 @@
+import MdxLayout from '../../components/blog/Layout';
+
+###### React Native performance tips and tricks.
+
+# React Native FlatList optimization with pagination
+
+While rendering a list of elements inside a React Native app, developer can choose two ways. Either render it inside ScrollView using `.map()` or use some help from baked in components like FlatList.
+
+## FlatList vs ScrollView
+
+When you need to render some small groups of static data - simple .map function inside a View or ScrollView is enough and will not cause any issues.
+But! When your data can grow over-time, e.g. when it depends on some external API calls or simply it’s a list that has no specified length - FlatList is usually a better choice.  
+FlatList gives you lazy loading, infinite scroll and more out of the box! Need three columns list? Simply use `numColumns` prop and you are ready to go!
+
+```jsx
+const GroceryItem: React.FC<GroceryItemProps> = ({ item }) => {
+    return (
+        <div>
+            <h2>{item.name}</h2>
+            <p>Price: {item.price}</p>
+            <p>Quantity: {item.quantity}</p>
+        </div>
+    );
+};
+```
+
+## FlatList advantages
+
+Using FlatList component to render a list of elements gives you some great results out of the box. Here is a simple example of how to use this component in real-life scenario:
+
+As you can see - it’s a pretty simple interface. What do you get in exchange for using it? Way better performance. And it’s a key selling point.
+Also - this component comes with huge
+
+
+
+> While rendering a list of elements inside a React Native app, developer can choose two ways. Either render it inside ScrollView using `.map()` or use some help from baked in components like FlatList.
+
+When you need to render some small groups of static data - simple .map function inside a View or ScrollView is enough and will not cause any issues.
+But! When your data can grow over-time, e.g. when it depends on some external API calls or simply it’s a list that has no specified length - FlatList is usually a better choice.  
+FlatList gives you lazy loading, infinite scroll and more out of the box! Need three columns list? Simply use `numColumns` prop and you are ready to go!
+
+
+
+
+export default function MDXPage({ children }) {
+    return <MdxLayout>{children}</MdxLayout>;
+}
