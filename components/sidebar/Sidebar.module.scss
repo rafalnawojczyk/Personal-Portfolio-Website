@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@import '../../styles/variables';
 
 .sidebar {
     position: fixed;
@@ -13,8 +13,12 @@
     flex-direction: column;
     align-items: center;
 
+    @media screen and (max-width: 700px) {
+        display: none;
+    }
+
     &::after {
-        content: "";
+        content: '';
         background-color: $color-font-grey;
         display: block;
         width: 2px;
