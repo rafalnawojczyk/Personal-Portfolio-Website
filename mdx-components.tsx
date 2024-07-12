@@ -4,6 +4,7 @@ import { Quote } from './components/blog/Quote';
 import { Paragraph } from './components/blog/Paragraph';
 import { CodeBlock } from './components/blog/Code';
 import { Subheading } from './components/blog/Subheading';
+import { UnorderedList } from './components/blog/UnorderedList';
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
     return {
@@ -16,6 +17,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         blockquote: ({ children }) => <Quote content={children} />,
         p: ({ children }) => <Paragraph content={children} />,
         code: prop => <CodeBlock content={prop.children as string} />,
+        ul: ({ children }) => <UnorderedList content={children} />,
         ...components,
     };
 }
