@@ -18,7 +18,11 @@ FlatList is a built-in component in the React Native ecosystem designed to rende
 FlatList offers a simple structure for setting up and rendering a list:
 
 ```jsx
-const data = [{ value: 'a', id: 'a' }, { value: 'b', id: 'b' }, { value: 'c', id: 'c' }];
+const data = [
+  { value: "a", id: "a" },
+  { value: "b", id: "b" },
+  { value: "c", id: "c" },
+];
 
 <FlatList
 	data={data}
@@ -47,7 +51,11 @@ The `FlatList` component offers several features that make it stand out:
 ## FlatList props and how to utilize its power
 
 ```jsx
-const data = [{ value: 'a', id: 'a' }, { value: 'b', id: 'b' }, { value: 'c', id: 'c' }];
+const data = [
+  { value: "a", id: "a" },
+  { value: "b", id: "b" },
+  { value: "c", id: "c" },
+];
 
 <FlatList
 	// array of data - REQUIRED
@@ -104,7 +112,11 @@ The following code is a great example of how this works. First, you need to defi
 - **`onEndReached`** callback: This function runs every time the user surpasses the `onEndReachedThreshold`. In the following example, you can see it is used to perform an API call and append the data from the response to the `items` array passed to the `data` prop.
 
 ```jsx
-const [items, setItems] = useState([{ value: 'a', id: 'a' }, { value: 'b', id: 'b' }, { value: 'c', id: 'c' }]);
+const [items, setItems] = useState([
+  { value: "a", id: "a" },
+  { value: "b", id: "b" },
+  { value: "c", id: "c" },
+]);
  		
 const onEndReachedHandler = async () => {
 	// get the new data that will be shown to the user
