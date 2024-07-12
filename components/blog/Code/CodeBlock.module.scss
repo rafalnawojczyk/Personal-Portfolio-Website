@@ -3,6 +3,7 @@
 .code {
     font-size: 1.8rem;
     line-height: 3rem;
+
     margin-top: 6rem;
     margin-bottom: 6rem;
     box-shadow: rgba(256, 256, 256, 0) 0px 0px 0px 0px, rgba(256, 256, 256, 0) 0px 0px 0px 0px,
@@ -14,6 +15,7 @@
         padding: 2rem;
         background-color: $bg-color-lighter !important;
         border: 1px solid rgba($color-brand, 0.3);
+        text-wrap: wrap;
     }
 
     & pre:focus {
