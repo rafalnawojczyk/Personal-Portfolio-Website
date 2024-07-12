@@ -1,43 +1,137 @@
 import MdxLayout from '../../components/blog/Layout';
 
+
 ###### React Native performance tips and tricks.
 
-# React Native FlatList optimization with pagination
+# Performance - React Native - Definitive guide to FlatList with advanced pagination and infinite scroll
 
-While rendering a list of elements inside a React Native app, developer can choose two ways. Either render it inside ScrollView using `.map()` or use some help from baked in components like FlatList.
+When rendering a list of elements inside a React Native app, developers can choose between two primary methods: rendering inside a `ScrollView` using `.map()` or leveraging built-in components like `FlatList`. 
 
-## FlatList vs ScrollView
+FlatList is superior to ScrollView in almost any possible way, and it’s the star of today’s show, so let’s dive right into that!
 
-When you need to render some small groups of static data - simple .map function inside a View or ScrollView is enough and will not cause any issues.
-But! When your data can grow over-time, e.g. when it depends on some external API calls or simply it’s a list that has no specified length - FlatList is usually a better choice.  
-FlatList gives you lazy loading, infinite scroll and more out of the box! Need three columns list? Simply use `numColumns` prop and you are ready to go!
+## What is FlatList
+
+FlatList is a built-in component in the React Native ecosystem designed to render lists of elements efficiently. While some developers may believe it resolves all performance issues, this is only partially true. Understanding and optimizing FlatList usage is crucial for maintaining app performance.
+
+### Basic Usage of FlatList
+
+FlatList offers a simple structure for setting up and rendering a list:
 
 ```jsx
-const GroceryItem: React.FC<GroceryItemProps> = ({ item }) => {
-    return (
-        <div>
-            <h2>{item.name}</h2>
-            <p>Price: {item.price}</p>
-            <p>Quantity: {item.quantity}</p>
-        </div>
-    );
-};
+   <FlatList
+	    data={[{ value: 'a', id: 'a' }, { value: 'b', id: 'b' }, { value: 'c', id: 'c' }]}
+	    renderItem={({ item }) => <Item title={item.value} />}
+	    keyExtractor={item => item.id}
+		/>;
 ```
 
-## FlatList advantages
+In this example, you see how straightforward it is to set up a FlatList. You pass your data array, define how to render each item, and specify how to extract keys from your data. The result is an efficient list rendering solution that maintains performance, even when the number of elements scales to hundreds or thousands.
 
-Using FlatList component to render a list of elements gives you some great results out of the box. Here is a simple example of how to use this component in real-life scenario:
+## Why FlatList is better than ScrollView?
 
-As you can see - it’s a pretty simple interface. What do you get in exchange for using it? Way better performance. And it’s a key selling point.
-Also - this component comes with huge
+Both options give you an ability to safely render a list of elements that will always be fully visible and accessible to users. While they both fulfill their purpose, let’s dive deeper to understand why `FlatList` is the preferred choice over `ScrollView` in most cases.
 
+### FlatList advantages
 
+The `FlatList` component offers several features that make it stand out:
 
-> While rendering a list of elements inside a React Native app, developer can choose two ways. Either render it inside ScrollView using `.map()` or use some help from baked in components like FlatList.
+- **safe to use** -  regardless of the size of the rendered array, `FlatList` consistently offers better performance than `ScrollView`. It should be your go-to component when rendering larger lists of elements.
+- **customizable** - need a three-column layout? Simply use the `numColumns` prop. Want to scroll to a specific element? The `scrollToIndex()` method has you covered.
+- **infinite scrolling** - this out-of-the-box feature is highly appreciated by users, allowing for seamless data loading as they scroll.
 
-When you need to render some small groups of static data - simple .map function inside a View or ScrollView is enough and will not cause any issues.
-But! When your data can grow over-time, e.g. when it depends on some external API calls or simply it’s a list that has no specified length - FlatList is usually a better choice.  
-FlatList gives you lazy loading, infinite scroll and more out of the box! Need three columns list? Simply use `numColumns` prop and you are ready to go!
+> Both `FlatList` and `ScrollView` enable you to safely render any list of elements. However, `FlatList` holds an edge due to its better performance, scalability, and customization options. It should be your primary choice when rendering lists.
+> 
+
+## FlatList props and how to utilize its power
+
+```jsx
+const data = [{ value: 'a', id: 'a' }, { value: 'b', id: 'b' }, { value: 'c', id: 'c' }];
+
+<FlatList
+			// array of data - REQUIRED
+	    data={data}
+	    // this callback should return an item that will be rendered for all elements - REQUIRED
+	    renderItem={({ item }) => <Item title={item.value} />}
+	    // render callback that gets access to (item, index) and should return string
+	    keyExtractor={item => item.id}
+		/>;
+```
+
+The holy-trinity of FlatList props are:
+
+- `data` - this is a **required** prop where you pass your main data that will construct your list of elements. Based on this list, `FlatList` will render its items, generate keys, and navigate. It always needs to be an array, either sourced from your app or as a response from an API call.
+- `renderItem` - another **required** prop that accepts a callback function. In its simplest form, it looks like:
+
+```jsx
+const renderItemHandler = (item, index) => <Text>{`${index}. This is ${item}`}</Text>
+```
+
+This prop controls the transformation of your data from an array to actual elements rendered on the user's screen. It should be as performant and straightforward as possible since React Native may need to render thousands of these items.
+
+- `keyExtractor` - this prop accepts a callback function that returns a string used as the React `key` prop. It shouldn’t be skipped, as missing keys can cause unexpected errors and performance issues when `FlatList` needs to render and rearrange items.
+
+> Remember! Avoid using anonymous inline functions in the `renderItem` prop! It's highly advised to create an Item component or handler function and simply pass it. This ensures that your render function remains consistent between rerenders and doesn't recreate itself unnecessarily.
+> 
+
+Other props are not essential to start using `FlatList`, but they are quite helpful. I will not cover all possible props, as you can refer to the [React Native Docs](https://reactnative.dev/docs/flatlist) for a comprehensive list. However, I will highlight props that are field-tested and found to be very useful for tweaking behavior, boosting performance, or simply making things more predictable.
+
+Without further ado, here they are:
+
+- `horizontal` - this prop lets you render your items as a horizontal list. It's very useful for short lists, typically used for less important items. It simplifies the creation of horizontally scrollable lists.
+- `numColumns` - do you want to create a list with multiple columns? Easy peasy! Simply pass the number of columns to this prop, and you're all set. Want to style your columns
+- **`columnWrapperStyle` -** this prop allows you to pass styles to the wrapper applied to all the columns.
+- `onEndReached` and `onEndReachedThreshold` - these props should be used together. Their main purpose is to perform an action when the user reaches a set threshold, i.e., when the user comes to the end of the list. A great way to utilize this will be explained below.
+
+## How to optimize FlatList by creating controlled infinite scroll
+
+To help you understand why and when this feature can be useful, consider this scenario: Your app displays a table with all the readings from a physical thermometer. This thermometer produces one reading per second, so you can get as many as 3600 data elements in an hour.
+
+In your code, you make one API call to get all the readings, but there's no need to show all of them to the user, as users are typically only interested in the latest results.
+
+With that in mind, you can simply slice your `initialData` array with a certain number of elements (e.g., 100) and show them initially to the user. This means your app will need to render exactly 100 elements on the first load, which is manageable in terms of performance.
+
+When the user wants to see older data and starts scrolling down the table, you can run a callback function as they near the end of the list to add more data. You can slice another 100 elements from the `initialData` array, showing 200 elements now.
+
+Each time the user scrolls down the list, your app will append another pack of elements to the list.
+
+This example is simple, but most apps will interact with an API. If you want to create the famous infinite scroll while keeping your app performant and your API not stressed out, this is the best way to go!
+
+The following code is a great example of how this works. First, you need to define:
+
+- **`onEndReachedThreshold`**: This determines how soon your `onEndReached` function should be called. This value should be tweaked to suit your needs, as it depends on how long your callback will take to perform the data update. Manually adjust this value to find the sweet spot for your application.
+- **`onEndReached`** callback: This function runs every time the user surpasses the `onEndReachedThreshold`. In the following example, you can see it is used to perform an API call and append the data from the response to the `items` array passed to the `data` prop.
+
+```jsx
+ 		const [items, setItems] = useState([{ value: 'a', id: 'a' }, { value: 'b', id: 'b' }, { value: 'c', id: 'c' }]);
+ 		
+ 		const onEndReachedHandler = async () => {
+ 		// get the new data that will be shown to the user
+		    const data = await fetch('any-api-call');
+        
+        // append new data to your items state
+        setItems(prevItems => ([...prevItems, ...data]));
+    };  
+  
+   <FlatList
+	    data={items}
+	    renderItem={({ item }) => <Item title={item.value} />}
+	    keyExtractor={item => item.id}
+	    
+	    onEndReachedThreshold={0.4}
+		  onEndReached={onEndReachedHandler}
+		/>;
+```
+
+And that's it! It’s really that simple to add infinite scroll or data pagination to your React Native application using `FlatList`.
+
+## Summary
+
+In this article, we explored the basics of using `FlatList` in React Native and why it is often preferred over `ScrollView` for rendering large lists. We covered essential props such as `data`, `renderItem`, and `keyExtractor`, and discussed additional useful props like `horizontal`, `numColumns`, and `onEndReached`. We also demonstrated how to implement controlled infinite scroll to optimize performance and enhance user experience.
+
+By understanding and utilizing these props effectively, you can significantly improve the efficiency and functionality of your React Native applications.
+
+Stay tuned for the next episode, where we will cover a faster alternative to `FlatList` that serves as a 1:1 replacement, offering even better performance for your React Native apps.
+
 
 
 
