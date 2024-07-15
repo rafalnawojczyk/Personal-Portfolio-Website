@@ -1,0 +1,17 @@
+.button {
+    background-color: transparent;
+    color: #ffffff;
+    padding: 1rem 2rem;
+    font-size: 1.8rem;
+    opacity: 0.9;
+    border-radius: $border-radius;
+    transition: $transition;
+
+    cursor: pointer;
+
+    border: 1px solid $color-brand;
+
+    &:hover {
+        background-color: $color-green-tint;
+    }
+}
