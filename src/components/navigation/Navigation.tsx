@@ -20,8 +20,12 @@ const Navigation = ({}: NavigationProps) => {
                 <nav>
                     <div className={`${styles.navigation}`}>
                         <ul className={styles.list}>
-                            <NavLink href={'/'} title="Home" subtitle="00." />
-                            <NavLink href={'/blog'} title="Blog" subtitle="01." />
+                            <li>
+                                <NavLink href={'/'} title="Home" subtitle="00." />
+                            </li>
+                            <li>
+                                <NavLink href={'/blog'} title="Blog" subtitle="01." />
+                            </li>
                         </ul>
                         <Link href="/" aria-label="Link to homepage - rafalnawojczyk.pl">
                             <Logo className={styles.logo} color={'#DADADA'} />
