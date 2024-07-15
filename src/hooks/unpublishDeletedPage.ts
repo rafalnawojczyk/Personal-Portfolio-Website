@@ -1,7 +1,7 @@
-import { AfterDeleteHook } from 'payload/dist/collections/config/types';
+import { CollectionAfterDeleteHook } from 'payload';
 
 export const unpublishDeletedPageFactory =
-    (prefix = '/'): AfterDeleteHook =>
+    (prefix = '/'): CollectionAfterDeleteHook =>
     async ({ req: { payload }, doc }) => {
         let path = `${prefix}${doc.slug}`;
 
