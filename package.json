@@ -1,34 +1,46 @@
 {
-  "name": "personal-portfolio",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@mdx-js/loader": "^3.0.1",
-    "@mdx-js/react": "^3.0.1",
-    "@next/font": "13.1.1",
-    "@next/mdx": "^14.2.4",
-    "@types/mdx": "^2.0.13",
-    "@types/node": "18.11.18",
-    "@types/react": "18.0.26",
-    "@types/react-dom": "18.0.10",
-    "eslint": "8.31.0",
-    "eslint-config-next": "13.1.1",
-    "mongodb": "^6.5.0",
-    "next": "14.2.5",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-transition-group": "^4.4.5",
-    "typescript": "4.9.4"
-  },
-  "devDependencies": {
-    "@types/react-transition-group": "^4.4.5",
-    "sass": "^1.57.1",
-    "shiki": "^1.10.1"
-  }
+    "name": "personal-portfolio",
+    "version": "0.1.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev",
+        "devturbo": "cross-env NODE_OPTIONS=--no-deprecation next dev --turbo",
+        "devsafe": "rm -rf .next && cross-env NODE_OPTIONS=--no-deprecation next dev",
+        "build": "cross-env NODE_OPTIONS=--no-deprecation next build",
+        "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
+        "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
+        "lint": "cross-env NODE_OPTIONS=--no-deprecation next lint",
+        "generate:types": "payload generate:types",
+        "generate:schema": "payload-graphql generate:schema"
+    },
+    "dependencies": {
+        "@lexical/code": "^0.16.1",
+        "@payloadcms/db-mongodb": "3.0.0-beta.61",
+        "@payloadcms/next": "3.0.0-beta.61",
+        "@payloadcms/plugin-cloud": "3.0.0-beta.61",
+        "@payloadcms/richtext-lexical": "3.0.0-beta.61",
+        "babel-plugin-react-compiler": "^0.0.0-experimental-592953e-20240517",
+        "escape-html": "^1.0.3",
+        "eslint": "8.31.0",
+        "graphql": "^16.8.1",
+        "next": "^15.0.0-canary.64",
+        "payload": "3.0.0-beta.61",
+        "react": "19.0.0-rc.0",
+        "react-dom": "19.0.0-rc.0",
+        "schema-dts": "^1.1.2"
+    },
+    "devDependencies": {
+        "@types/escape-html": "^1.0.4",
+        "@types/node": "^20.14.9",
+        "@types/react": "npm:types-react@19.0.0-beta.2",
+        "@types/react-dom": "npm:types-react-dom@19.0.0-beta.2",
+        "eslint": "^8.57.0",
+        "eslint-config-next": "15.0.0-rc.0",
+        "shiki": "^1.10.1",
+        "typescript": "5.5.2"
+    },
+    "engines": {
+        "node": "^18.20.2 || >=20.9.0"
+    }
 }
