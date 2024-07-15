@@ -1,0 +1,16 @@
+.paragraph {
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+    color: rgba($color-font-grey, 0.9);
+    margin-bottom: 2.4rem;
+
+    & code {
+        background-color: $bg-color-light;
+        padding-left: 4px;
+        padding-right: 4px;
+        display: inline-block;
+        border-radius: 4px;
+        color: $color-font-grey;
+        font-weight: 600;
+    }
+}

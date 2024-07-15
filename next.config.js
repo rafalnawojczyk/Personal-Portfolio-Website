@@ -1,8 +1,17 @@
-const withMDX = require('@next/mdx')();
-/** @type {import('next').NextConfig} */
+import { withPayload } from '@payloadcms/next/withPayload';
 const nextConfig = {
-    reactStrictMode: true,
-    pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
+    sassOptions: {
+        additionalData: content => {
+            return `
+                 @import "@/styles/variables";
+    
+                ${content};
+                 `;
+        },
+    },
+    experimental: {
+        reactCompiler: false,
+    },
 };
 
-module.exports = withMDX(nextConfig)
+export default withPayload(nextConfig);
