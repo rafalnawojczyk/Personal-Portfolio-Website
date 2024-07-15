@@ -1,0 +1,24 @@
+.homepage {
+    max-width: $max-width;
+    margin-left: auto;
+    margin-right: auto;
+    transition: $transition;
+
+    &__sidebar-email {
+        writing-mode: vertical-lr;
+        padding: 3rem;
+    }
+
+    &__logo {
+        width: 3rem;
+        height: 3rem;
+        transform: translate(0, 0);
+        transition: $transition;
+        margin: 3rem;
+
+        &:hover {
+            transform: translate(0, -15%);
+        }
+    }
+}
+
