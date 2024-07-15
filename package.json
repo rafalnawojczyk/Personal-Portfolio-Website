@@ -21,6 +21,7 @@
         "@payloadcms/plugin-cloud": "3.0.0-beta.61",
         "@payloadcms/richtext-lexical": "3.0.0-beta.61",
         "babel-plugin-react-compiler": "^0.0.0-experimental-592953e-20240517",
+        "cross-env": "^7.0.3",
         "escape-html": "^1.0.3",
         "eslint": "8.31.0",
         "graphql": "^16.8.1",
