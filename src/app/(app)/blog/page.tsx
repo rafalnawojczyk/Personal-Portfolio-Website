@@ -16,11 +16,13 @@ const Blog = async () => {
         limit: 50,
     });
 
+    const filteredBlogs = docs.docs.filter(el => el.slug);
+
     return (
         <UnorderedList
-            content={docs.docs.map(doc => (
+            content={filteredBlogs.map(doc => (
                 <li key={doc.id}>
-                    <Link href={`https://rafalnawojczyk.pl/blog/${doc.slug}`}>{doc.metaTitle}</Link>
+                    <Link href={`/blog/${doc.slug}`}>{doc.metaTitle}</Link>
                 </li>
             ))}
         />
