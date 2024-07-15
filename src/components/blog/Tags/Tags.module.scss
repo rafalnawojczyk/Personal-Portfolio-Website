@@ -1,0 +1,23 @@
+.tag {
+    display: inline-flex;
+    padding: 0.6rem 1.2rem;
+    border-radius: 3.2rem;
+    white-space: nowrap;
+    color: $color-font-grey;
+    border: 1px solid #a56b5c;
+}
+
+.tagContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.6rem;
+}
+
+.date {
+    margin-left: 0.8rem;
+    font-size: 1.4rem;
+    opacity: 0.7;
+    color: $color-font-grey;
+}
