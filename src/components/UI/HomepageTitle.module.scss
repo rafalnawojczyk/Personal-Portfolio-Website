@@ -1,0 +1,41 @@
+.title {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 3.2rem;
+    color: $color-font-grey;
+    white-space: nowrap;
+    margin-top: 9rem;
+    margin-bottom: 6rem;
+
+    @media screen and (max-width: 33.45em) {
+        font-size: 2.8rem;
+        white-space: normal;
+    }
+
+    &__number {
+        color: $color-brand;
+        margin-right: 1.4rem;
+        font-size: 2.4rem;
+        margin-bottom: 0.2rem;
+        font-weight: 400;
+
+        @media screen and (max-width: 33.45em) {
+            margin-right: 1rem;
+            font-size: 2rem;
+        }
+    }
+
+    &::after {
+        content: '';
+        height: 1px;
+        width: 70%;
+        display: block;
+        margin-left: 2.4rem;
+        background-color: $bg-color-light;
+
+        @media screen and (max-width: 33.45em) {
+            display: none;
+        }
+    }
+}

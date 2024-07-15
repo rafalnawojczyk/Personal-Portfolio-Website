@@ -1,0 +1,11 @@
+.sidebar {
+    &__link {
+        color: $color-font-grey;
+        transition: $transition;
+
+        &:hover,
+        &:active {
+            color: $color-brand;
+        }
+    }
+}

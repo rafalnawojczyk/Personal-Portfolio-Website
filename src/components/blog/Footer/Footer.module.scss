@@ -1,0 +1,48 @@
+.separator {
+    margin-top: 12rem;
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 154, 67, 0) 0%,
+        rgba(255, 154, 67, 0.7) 50%,
+        rgba(255, 154, 67, 0) 100%
+    );
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 90rem;
+    margin-inline: auto;
+    padding-top: 4.8rem;
+    padding-bottom: 4.8rem;
+}
+
+.copyright {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: $color-font-grey-dark;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 1.6rem;
+}
+
+.link {
+    cursor: pointer;
+}
+
+.link:hover .icon {
+    color: $color-brand;
+}
+
+.icon {
+    width: 3.2rem;
+    height: 3.2rem;
+    color: $color-font-grey;
+    transition: all 0.5s var(--ease-in-out-quint);
+}
