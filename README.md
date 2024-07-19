@@ -34,8 +34,8 @@ npm install
 To run application run this command:
 
 ```
-npm run dev
+npm run dev 
 ```
 
 ## Pagespeed
-![Personal portfolio website](https://github.com/rafalnawojczyk/Personal-Portfolio-Website/blob/main/public/pagespeed.png?raw=true)
+![Personal portfolio website](https://github.com/rafalnawojczyk/Personal-Portfolio-Website/blob/main/public/pagespeed.png?raw=true )
