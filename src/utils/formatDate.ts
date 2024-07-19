@@ -36,5 +36,5 @@ export function formatDate(date: Date): string {
 
     const ordinalSuffix = getOrdinalSuffix(day);
 
-    return `${dayOfWeek}, ${month} ${day}${ordinalSuffix}, ${year}`;
+    return `${dayOfWeek}, ${month} ${day}${ordinalSuffix} ${year}`;
 }
