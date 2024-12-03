@@ -66,7 +66,8 @@ const scramblesMap: Record<PossibleCubes, string[]> = {
     minx: aMinx as string[],
     '333oh': a333oh as string[],
     '333bf': a333bf as string[],
-    '444bf': [],
+    // TODO: change to '444bf' scrambles
+    '444bf': a444 as string[],
     '555bf': a555bf as string[],
     skewb: aSkewb as string[],
 };
