@@ -1,5 +1,4 @@
-import { NextApiRequest } from 'next';
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
 import a333 from '../../../../scrambles/333.json';
 import a222 from '../../../../scrambles/222.json';
@@ -72,8 +71,8 @@ const scramblesMap: Record<PossibleCubes, string[]> = {
     skewb: aSkewb as string[],
 };
 
-const handler = async (req: NextApiRequest) => {
-    const apiKey = req.headers['api-key'];
+const handler = async (req: NextRequest) => {
+    const apiKey = req.headers.get('api-key');
     if (apiKey !== process.env.NEXT_PRIVATE_API_KEY) {
         return NextResponse.json({ message: 'Unauthorized' }, { status: 401 });
     }
