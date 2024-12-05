@@ -51,5 +51,5 @@ export const cubeRivalsData: FeaturedProjectModel = {
     imageSrc: CubeRivalsImage.src,
     projectTitle: 'Cube Rivals - Mobile App',
     projectDescription: `Fully functional mobile app that is published on Google Play Store. It's a speedcubing timer with a lot of features and statistics to help cubers improve their times.`,
-    technologies: ['React Native', 'Expo', 'Expo-Router', 'RealmDB', 'RN Skia'],
+    technologies: ['React Native', 'Expo', 'Expo-Router', 'RealmDB', 'WatermelonDB', 'RN Skia'],
 };
